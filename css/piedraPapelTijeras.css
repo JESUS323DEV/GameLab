@@ -1,0 +1,72 @@
+/*====================ESTILOS MINI-GAME PIEDRA PAPEL O TIJERAS====================*/
+
+/*imágenes piedra papel o tijeras*/
+.cont-imgPuños img {
+    width: 400px;
+}
+
+.imgPuño1 {
+    animation: golpeteo1 0.6s infinite alternate;
+}
+
+.imgPuño2 {
+    animation: golpeteo2 0.6s infinite alternate;
+}
+
+.bgGif {
+
+    background-image: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHZ2NnNnc3dsZHYxa2tsdzVzamNhY3U1MjhmcmJhbzJ0enVwYjA2MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lTkOQ1aacqClLCcBZq/giphy.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/*animaciones puños*/
+@keyframes golpeteo1 {
+    from {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(40px) rotate(-5deg);
+    }
+}
+
+@keyframes golpeteo2 {
+    from {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(-40px) rotate(5deg);
+    }
+}
+
+
+/*botones piedra papel tijeras*/
+.img-btn {
+
+    width: 120px !important;
+    height: 120px !important;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 0, 0);
+    cursor: pointer;
+    background-color: black;
+
+}
+
+.img-btn:hover {
+
+    border: 10px solid red;
+}
+
+.puntosText {
+
+    background: linear-gradient(to right, rgb(255, 166, 0), rgb(238, 0, 0));
+    border-radius: 5px;
+}
+
+.resultadoText {
+
+    background: linear-gradient(to left, rgb(255, 166, 0), rgb(238, 0, 0));
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="ruta/a/tu/icono.png" type="image/png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/pokeCutre.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="d-flex align-items-center justify-content-center  bg-body-secondary ">
+
+            <h1 class="p-4 fs-1 mx-5">Minijuegos YisusGames</h1>
+            <button class="btn btn-lg btn-primary" id="btnBackLogin">Login</button>
+        </div>
+    </header>
+
+    <h2 class="text-center bg-body-secondary mt-5 p-4 fs-1">PokéCutre</h2>
+
+
+
+
+    <!--! VIDA JUGADOR-->
+    <div class="row d-flex align-items-center justify-content-center fondoJuego text-white">
+        <div id="vidaJugador" class="flex-column col-12 col-lg-4">
+            <section id="jugadorVida" class="gifJugador">
+                <!-- todo: IMG - VIDA JUGADOR1-->
+                <div class="text-center">
+                    <p class="jugadorVida text-white">Vida:</p>
+                    <div class="barraVidaJugador mx-auto">
+                        <div class="barraRellenoJugador"></div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <!-- todo: IMG - JUGADOR1-->
+                    <img class=" imgPlayer p-3 " src="../media/img/pokeCutre/magoPlayer.png" alt="">
+                </div>
+
+
+
+
+                <!--? Contenedor de mensajes del jugador -->
+                <div id="" class="">
+                    <p class="superEfec "></p>
+                    <p class="noEsEfec"></p>
+                    <p class="efectivo"></p>
+
+                </div>
+            </section>
+            <!--? log jugadas-->
+            <div>
+                <div id="logJugador" class="border fsTextJugador "></div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <!--! RADIOS DE ATAQUE-->
+        <div class="col-12 col-lg-3 d-flex flex-column text-center border fondoAtaques ">
+
+            <!--todo: Ataque fuego-->
+            <div class="my-3 d-flex flex-column">
+                <!--! IMG ESCUDO DE FUEGO-->
+                <img src="../media/img/pokeCutre/escudoFuego.png" class="imgEscudos d-none mx-auto escudoFuego" alt="">
+
+                <!--! IMG ATAQUE DE FUEGO-->
+                <img class="imgAtaques mx-auto" src="../media/img/pokeCutre/ataqueFuego.png" alt="">
+
+                <!--! RADIO FUEGO-->
+                <label class="fuego" for=""> Ataque de Fuego </label>
+                <input type="radio" name="ataqueName" value="fuego" id="attackFuego">
+            </div>
+
+
+            <!--todo: Ataque Agua-->
+            <div class="my-3 d-flex flex-column">
+
+                <!--! IMG ESCUDO DE AGUA-->
+                <img src="../media/img/pokeCutre/escudoAgua.png" class="imgEscudos d-none mx-auto " alt="">
+
+                <!--! IMG ATAQUE DE AGUA-->
+                <img class="imgAtaques mx-auto" src="../media/img/pokeCutre/ataqueAgua.png" alt="">
+
+                <label class="agua" for="">Ataque de Agua</label>
+                <input type="radio" name="ataqueName" value="agua" id="attackAgua">
+            </div>
+
+            <!--todo: Ataque Planta-->
+            <div class="my-3 d-flex flex-column">
+
+                <!--! IMG ESCUDO DE PLANTA-->
+                <img src="../media/img/pokeCutre/escudoPlanta.png" class="imgEscudos d-none mx-auto " alt=""
+                    id="escudoPlanta">
+
+                <!--! IMG ATAQUE DE PLANTA-->
+                <img class="imgAtaques mx-auto" src="../media/img/pokeCutre/ataquePlanta.png" alt="">
+
+                <label class="my-2 planta" for="">Ataque de Planta</label>
+                <input type="radio" name="ataqueName" value="planta" id="attackPlanta">
+            </div>
+
+            <!--! BOTÓN DE ATAQUE-->
+            <div class="text-center btnAtacar my-3">
+                <button id="btnAttack" class="">ATACAR</button>
+            </div>
+            <div class="btnDefensa my-3">
+                <button id="btnNextTurno" class=" d-none">Terminar turno</button>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!--! VIDA MAQUINA-->
+
+        <div class="col-12 col-lg-4">
+            <section id="vidaMaquina" class="gifMaquina">
+
+                <!-- todo: IMG - VIDA MAQUINA-->
+                <div class=" text-center">
+                    <p class="maquinaVida text-white">vida:</p>
+                    <div class="barraVidaMaquina mx-auto">
+                        <div class="barraRellenoMaquina "></div>
+                    </div>
+                </div>
+
+                <!-- todo: IMG - MAQUINA-->
+                <div class="text-center">
+                    <img class=" imgMaquina p-3" src="../media/img/pokeCutre/gotaPlayer.png" alt="">
+                </div>
+
+
+
+
+                <!--? Contenedor de mensajes de la máquina -->
+                <div id="" class="">
+                    <p class="superEfec"></p>
+                    <p class="noEsEfec"></p>
+                    <p class="efectivo"></p>
+            </section>
+            <!--todo: log maquina-->
+            <div>
+                <div id="logMaquina" class="border text-center fsTextMaquina "></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center my-5 ">
+        <button id="btnBack" class="btn btn-primary btn-lg mx-5 ">Anterior</button>
+        <button id="btnNext" class="btn btn-primary btn-lg mx-5 ">Siguiente</button>
+    </div>
+
+
+
+
+    <script src="../js/pokeCutre.js"></script>
+</body>
+
+</html>
