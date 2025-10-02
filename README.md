@@ -15,10 +15,10 @@ Más que juegos, son mis **laboratorios de práctica**: cada uno representa un r
 
 ## ✨ Juegos incluidos (hasta ahora)
 
-- ✅ **Ahorcado** → práctica con arrays, strings y eventos de teclado  
-- ✅ **Juego de turnos (Mago vs Slim)** → lógica de combate, vida, críticos y logs  
-- ✅ **Carrito de compra simple** → manipulación del DOM y tablas dinámicas  
-- 🚧 Próximamente: más minijuegos (ideas en desarrollo)
+- ✅ **Piedra, papel o tijeras** → práctica de condicionales y comparación de valores  
+- ✅ **Adivina la carta (apostando)** → uso de números aleatorios y control de flujo  
+- 🚧 **Juego de turnos (Mago vs Slim)** → lógica de combate, vida, críticos y logs (ideas en desarrollo)  
+- 🚧 Próximamente: más minijuegos
 
 ---
 
