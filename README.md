@@ -1,7 +1,8 @@
 # 🎮 Web de MiniJuegos ![Estado](https://img.shields.io/badge/versión-en%20progreso-orange)
 
 🔗 **Ver online:** [(Pendiente de subir a GitHub Pages)](https://jesus323dev.github.io/GameLab/)
-🚧 **En Construcción: **
+🚧 **En Construcción**
+⚠️ **Fuera de servicio**
 
 ---
 
