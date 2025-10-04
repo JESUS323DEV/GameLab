@@ -17,10 +17,16 @@ Más que juegos, son mis **laboratorios de práctica**: cada uno representa un r
 
 ## ✨ Juegos incluidos (hasta ahora)
 
+- 🔑 **Login cutre (Index)** → primera práctica con formularios y validación básica  
 - ✅ **Piedra, papel o tijeras** → práctica de condicionales y comparación de valores  
 - ✅ **Adivina la carta (apostando)** → uso de números aleatorios y control de flujo  
-- 🚧 **Juego de turnos (Mago vs Slim)** → lógica de combate, vida, críticos y logs (ideas en desarrollo)  
-- 🚧 Próximamente: más minijuegos
+- 🚧 **PokéCutre (terminó en “Mago vs Slime”)**  
+  - Comenzó como un intento de juego estilo Pokémon  
+  - Pero evolucionó a un combate por turnos entre mago y slime  
+  - Aquí practiqué: turnos, vida, críticos, logs y selección de ataques  
+- 🚧 **Juego de turnos (Mago vs Slim)** → pruebas adicionales de combate y feedback visual (idea en desarrollo)  
+- 🚧 Próximamente: más minijuegos  
+
 
 ---
 
@@ -35,16 +41,38 @@ Más que juegos, son mis **laboratorios de práctica**: cada uno representa un r
 
 ## 📂 Estructura del proyecto
 
-/MiniJuegos  
+```plaintext
+/GameLab  
 │  
-├── index.html (menú principal con links a los juegos)  
+├── index.html (login cutre / página inicial)  
+│  
+├── html/  
+│   ├── piedraPapelTijeras.html  
+│   ├── tragaMonedas.html  
+│   ├── pokeCutre.html (terminó en “Mago vs Slime”)  
+│   └── ...otros minijuegos  
+│  
 ├── css/  
-│   └── estilos.css  
+│   ├── estilos.css  
+│   └── estilos específicos por juego (opcional)  
+│  
 ├── js/  
-│   └── scripts individuales de cada juego  
+│   ├── piedraPapelTijeras.js  
+│   ├── tragaMonedas.js  
+│   ├── pokeCutre.js  
+│   └── continuara...
+│  
 ├── media/  
-│   └── imágenes de los juegos  
+│   └── img/  
+│       ├── piedra-btn.png  
+│       ├── papel-btn.png  
+│       ├── tijeras-btn.png  
+│       ├── puño.png  
+│       ├── puño2.png  
+│       └── ...assets de cada juego  
+│  
 └── README.md  
+```
 
 ---
 
