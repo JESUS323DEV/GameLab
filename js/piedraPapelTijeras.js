@@ -48,7 +48,7 @@ function okPiedra() {
         contador--;
 
         puntosMaquina.textContent = "Puntos de la Maquina: " + puntosPerder;
-        imgPuño1.src = "/media/img/papel-btn.png"
+        imgPuño1.src = "../media/img/papel-btn.png"
         imgPuño1.style.animation = "none";
         imgPuño2.style.animation = "none";
         resetPuños();
@@ -58,7 +58,7 @@ function okPiedra() {
         resultado1.textContent = "Ganaste 😎";
         puntosGanar++;
         puntosJugador.textContent = "Puntos del jugador: " + puntosGanar;
-        imgPuño1.src = "/media/img/tijeras-btn.png";
+        imgPuño1.src = "../media/img/tijeras-btn.png";
         imgPuño1.style.animation = "none";
         imgPuño1.style.transform = "scaleX(-1)";
         imgPuño2.style.animation = "none";
@@ -78,8 +78,8 @@ function resetPuños() {
 
     setTimeout(() => {
         // volver a las imágenes de puño cerrado
-        imgPuño1.src = "/media/img/puño2.png"; // jugador
-        imgPuño2.src = "/media/img/puño.png";  // máquina
+        imgPuño1.src = "../media/img/puño2.png"; // jugador
+        imgPuño2.src = "../media/img/puño.png";  // máquina
 
 
         // reactivar las animaciones
@@ -109,10 +109,10 @@ function okPapel() {
 
     if (pptRandom === jugador) {
         resultado1.textContent = "Empate 😐";
-        imgPuño2.src = "/media/img/papel-btn.png";
+        imgPuño2.src = "../media/img/papel-btn.png";
         imgPuño2.style.transform = "scaleX(-1)";
         imgPuño2.style.animation = "none";
-        imgPuño1.src = "/media/img/papel-btn.png";
+        imgPuño1.src = "../media/img/papel-btn.png";
         imgPuño1.style.animation = "none";
         resetPuños()
 
@@ -120,10 +120,10 @@ function okPapel() {
         resultado1.textContent = "Perdiste 😭";
         puntosPerder++;
         puntosMaquina.textContent = "Puntos de la Maquina: " + puntosPerder;
-        imgPuño2.src = "/media/img/papel-btn.png";
+        imgPuño2.src = "../media/img/papel-btn.png";
         imgPuño2.style.transform = "scaleX(-1)";
         imgPuño2.style.animation = "none";
-        imgPuño1.src = "/media/img/tijeras-btn.png";
+        imgPuño1.src = "../media/img/tijeras-btn.png";
         imgPuño1.style.transform = "scaleX(-1)";
         imgPuño1.style.animation = "none";
         resetPuños()
@@ -133,7 +133,7 @@ function okPapel() {
         resultado1.textContent = "Ganaste 😎";
         puntosGanar++;
         puntosJugador.textContent = "Puntos del jugador: " + puntosGanar;
-        imgPuño2.src = "/media/img/papel-btn.png";
+        imgPuño2.src = "../media/img/papel-btn.png";
         imgPuño2.style.transform = "scaleX(-1)"
         imgPuño2.style.animation = "none";
         imgPuño1.style.animation = "none";
@@ -156,9 +156,9 @@ function okTijeras() {
 
     if (pptRandom === jugador) {
         resultado1.textContent = "Empate 😐";
-        imgPuño2.src = "/media/img/tijeras-btn.png";
+        imgPuño2.src = "../media/img/tijeras-btn.png";
         imgPuño2.style.animation = "none";
-        imgPuño1.src = "/media/img/tijeras-btn.png";
+        imgPuño1.src = "../media/img/tijeras-btn.png";
         imgPuño1.style.animation = "none";
         imgPuño1.style.transform = "scaleX(-1)"
         resetPuños();
@@ -167,7 +167,7 @@ function okTijeras() {
         resultado1.textContent = "Perdiste 😭";
         puntosPerder++;
         puntosMaquina.textContent = "Puntos de la Maquina: " + puntosPerder;
-        imgPuño2.src = "/media/img/tijeras-btn.png";
+        imgPuño2.src = "../media/img/tijeras-btn.png";
         imgPuño2.style.animation = "none";
         imgPuño1.style.animation = "none";
         resetPuños();
@@ -178,9 +178,9 @@ function okTijeras() {
         resultado1.textContent = "Ganaste 😎";
         puntosGanar++;
         puntosJugador.textContent = "Puntos del jugador: " + puntosGanar;
-        imgPuño2.src = "/media/img/tijeras-btn.png";
+        imgPuño2.src = "../media/img/tijeras-btn.png";
         imgPuño2.style.animation = "none";
-        imgPuño1.src = "/media/img/papel-btn.png";
+        imgPuño1.src = "../media/img/papel-btn.png";
         imgPuño1.style.animation = "none";
         resetPuños();
 
@@ -194,7 +194,7 @@ let btnNext = document.querySelector("#btnNext")
 
 btnNext.addEventListener("click", function () {
 
-    window.location.href = "/html/tragaMonedas.html";
+    window.location.href = "../html/tragaMonedas.html";
 
 })
 
