@@ -1,25 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yisus">
+    <meta name="description"
+        content="GAME-LAB Web personal donde muestro mi progreso aprendiendo JavaScript aplicado en minijuegos. Cada juego representa una etapa de mi aprendizaje: desde prácticas simples hasta pequeños proyectos con lógica, turnos y efectos visuales.">
+    <meta name="keywords" content="html, css, javascript, game-lab, Yisus , jueguitos,">
+    <!--!link bootstrap css - icon-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/piedraPapelTijeras.css">
-    <title>Minijuegos - YisusGames</title>
+    <link rel="stylesheet" href="../css/headerFooter.css">
+
+    <title>Minijuegos - YisusGames - Piedra, Papel o Tijeras</title>
 </head>
 
 <body>
 
     <header>
-        <div class="d-flex align-items-center justify-content-center  bg-body-secondary ">
-
-            <h1 class="p-4 fs-1 mx-5">Minijuegos YisusGames</h1>
-            <button class="btn btn-lg btn-primary" id="btnBackLogin">Login</button>
+        <div class="contHeader">
+            <h1 class="text-center text-white p-4">Minijuegos - YisusGames - Piedra, Papel o Tijeras</h1>
         </div>
     </header>
 
+
+    <!--!Piedra, Papel o Tijeras DESCRIPCIÓN -->
+
+    <div class="container shadow ">
+        <div class="fs-3 p-3">
+            <h3 class="text-center py-3 fs-2">Piedra, Papel o Tijeras</h3>
+            <p>Este fue uno de mis primeros minijuegos en JavaScript, creado para practicar condicionales,
+                comparación
+                de valores y manejo básico del DOM.
+                El objetivo es simple: vencer a la máquina usando las reglas clásicas del juego.</p>
+        </div>
+
+        <!--todo: Reglas del juego:-->
+        <div class="row">
+            <div class="col-12 col-lg-4 p-3 d-flex flex-column text-center border">
+                <h5 class="mb-4 ">Reglas del juego:</h5>
+                <p>✊ Piedra vence a ✂️ Tijeras</p>
+                <p>🧻 Papel vence a ✊ Piedra</p>
+                <p>✂️ Tijeras vence a 🧻 Papel</p>
+                <p>Si ambos eligen lo mismo, es empate</p>
+            </div>
+
+            <!--todo: Cómo se juega:-->
+            <div class="col-12 col-lg-4 p-3 d-flex flex-column text-center border">
+                <h5 class="mb-4">Cómo se juega:</h5>
+                <p>Elige una opción haciendo clic en el botón correspondiente.</p>
+                <p>La máquina elegirá automáticamente su jugada al azar.</p>
+                <p>Se mostrará el resultado: ganaste, perdiste o empate.</p>
+                <p>¡Vuelve a intentarlo las veces que quieras!</p>
+            </div>
+
+
+            <!--todo: Próximos pasos-->
+            <div class="col-12 col-lg-4 p-3 text-start border ">
+                <h5 class="mb-4 text-center">Próximos pasos</h5>
+                <ul>
+                    <li>Añadir contador de victorias, derrotas y empates.</li>
+                    <li>Incluir una animación o efecto visual al mostrar el resultado.</li>
+                    <li>Agregar sonidos de clic y resultado (ganar, perder, empate).</li>
+                    <li>Mejorar el diseño visual con iconos o imágenes animadas.</li>
+                    <li>Crear un botón de “Reiniciar partida”.</li>
+                    <li>Optimizar el código y separar la lógica del diseño.</li>
+                    <li>Añadir una breve animación al seleccionar cada jugada.</li>
+                    <li>Responsividad total</li>
+                </ul </div>
+            </div>
+        </div>
+    </div>
+
+    <!--! SECCIÓN DEL JUEGO-->
     <section class="mt-5">
         <div class="bgGif  container cont-imgPuños border text-center ">
             <div>
@@ -48,8 +104,17 @@
         <button class="btn btn-primary btn-lg " id="btnNext">Siguiente</button>
     </div>
 
+    <footer class="bg-body-secondary  border p-2 loginFooter">
+        <div class="container text-center">
+            <p class="py-3 text-white">© 2025 GameLab — Proyecto personal de Yisus.
+                Desarrollado con HTML, CSS y JavaScript.</p>
+        </div>
+    </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="js/login.js"></script>
     <script src="../js/piedraPapelTijeras.js"></script>
 </body>
 

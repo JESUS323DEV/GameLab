@@ -13,28 +13,108 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/pokeCutre.css">
+    <link rel="stylesheet" href="../css/headerFooter.css">
     <title>GAME-LAB</title>
 </head>
+
 <body>
 
-
     <header>
-        <div class="d-flex align-items-center justify-content-center  bg-body-secondary ">
+        <div class="contHeader">
+            <h1 class="text-center text-white p-4">Minijuegos - YisusGames - PokéCutre (terminó siendo Mago vs Slime )
+            </h1>
 
-            <h1 class="p-4 fs-1 mx-5">Minijuegos YisusGames</h1>
-            <button class="btn btn-lg btn-primary" id="btnBackLogin">Login</button>
         </div>
     </header>
 
+    <div class="container shadow mb-5">
+        <div class="fs-3 p-3">
+            <h3 class="text-center py-3 fs-2">PokéCutre (Mago vs Slime) 🧙‍♂️👾</h3>
+            <p>Este proyecto comenzó como un intento de crear un pequeño juego estilo Pokémon, pero terminó
+                evolucionando en algo propio: un combate por turnos entre un mago y un slime.
+                Fue mi primer gran práctica para trabajar ataques, turnos, vida, críticos, escudos elementales y logs
+                dinámicos.</p>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-4 p-3 d-flex flex-column text-center border">
+                <h5 class="mb-4 ">Características principales ✅</h5>
+                <p>• Sistema de turnos entre jugador y enemigo.</p>
+                <p>• Ataques elementales: <strong>Fuego</strong>, <strong>Agua</strong> y <strong>Planta</strong>, cada
+                    uno con ventajas y desventajas.</p>
+                <p>• Escudos protectores del mismo tipo que los ataques.</p>
+                <p>• Daños <strong>críticos</strong>, <strong>súper efectivos</strong> o <strong>no efectivos</strong>,
+                    con badges visibles en pantalla.</p>
+                <p>• Registro visual del combate con mensajes de acciones (logs).</p>
+                <p>• Sistema de vidas que se actualiza dinámicamente tras cada ataque.</p>
+            </div>
 
-    
-    
-    
-    <h2 class="text-center bg-body-secondary mt-5 p-4 fs-1">PokéCutre</h2>
+            <!--todo: Cómo se juega:-->
+            <div class="col-12 col-lg-4 p-3 d-flex flex-column text-center border ">
+                <h5 class="mb-4">Cómo se juega ⚔️ 🛡️</h5>
+                <p>1. En cada turno, el <strong>mago</strong> y el <strong>slime</strong> realizan sus ataques y
+                    defensas
+                    elementales.</p>
+                <p>2. Se comparan los tipos de elementos: <strong>Fuego</strong>, <strong>Agua</strong> o
+                    <strong>Planta</strong>.
+                </p>
+                <p>3. Si los elementos son iguales, ambos causan <strong>daño normal</strong> (empate elemental).</p>
+                <p>4. Si el ataque de un personaje tiene ventaja elemental sobre el otro, causará <strong>daño súper
+                        efectivo</strong>.</p>
+                <p>5. Si el ataque es de un elemento en desventaja, causará <strong>daño no efectivo</strong>
+                    (reducido).</p>
+                <p>6. Ambos personajes pierden vida en cada turno según el resultado de la comparación.</p>
+                <p>7. El combate termina cuando uno de los dos llega a <strong>0 de vida</strong>.</p>
 
-    <!--! VIDA JUGADOR-->
+
+
+
+            </div>
+
+
+            <!--todo: Próximos pasos-->
+            <div class="col-12 col-lg-4 p-3 text-start border ">
+                <h5 class="mb-4 text-center">Próximos pasos 🚧</h5>
+                <ul>
+                    <li class="mb-3">Añadir animaciones de ataque y defensa.</li>
+                    <li class="mb-3">Incluir sonido y efectos visuales según el tipo de ataque.</li>
+                    <li class="mb-3">Implementar un sistema de niveles o experiencia.</li>
+                    <li class="mb-3">Crear una pantalla final de victoria o derrota.</li>
+                    <li class="mb-3">Ajustar la lógica de IA del slime para hacerlo más estratégico.</li>
+                    <li class="mb-3">Responsividad total</li>
+                    <li class="">Y más...</li>
+
+                </ul </div>
+            </div>
+
+            <div class="col-12 p-3 text-center ">
+                <h4>🔁 Lógica de debilidades elementales</h4>
+                <p>El sistema de combate se basa en una lógica de <strong>ventajas y desventajas elementales</strong>,
+                    donde cada tipo de ataque puede ser más o menos efectivo según el elemento del rival.</p>
+                <p>🔥 <strong>Fuego</strong> quema a <strong>Planta</strong> → <em>daño súper efectivo</em>.</p>
+                <p>💧 <strong>Agua</strong> apaga a <strong>Fuego</strong> → <em>daño súper efectivo</em>.</p>
+                <p>🌿 <strong>Planta</strong> absorbe a <strong>Agua</strong> → <em>daño súper efectivo</em>.</p>
+                <p>Si ambos ataques son del mismo tipo, se considera un <strong>empate elemental</strong> y el daño
+                    infligido es <em>normal</em>.</p>
+                <p>Cuando un ataque es de un elemento en desventaja (por ejemplo, <strong>Agua</strong> contra
+                    <strong>Planta</strong>), se considera <em>no efectivo</em> y causa menos daño.
+                </p>
+                <p>💥 Además, durante cada ataque se calcula un posible <strong>daño crítico</strong> mediante un número
+                    aleatorio entre <strong>5 y 15</strong>, que se suma al daño total final (sí, aún falta pulirlo 😅).
+                </p>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <!--! BLOQUE DE MAGO Y SLIME Y ATAQUES-->
     <div class="row d-flex align-items-center justify-content-center fondoJuego text-white">
         <div id="vidaJugador" class="flex-column col-12 col-lg-4">
+            <!--!SECCIÓN JUGADOR-->
             <section id="jugadorVida" class="gifJugador">
                 <!-- todo: IMG - VIDA JUGADOR1-->
                 <div class="text-center">
@@ -47,27 +127,18 @@
                     <!-- todo: IMG - JUGADOR1-->
                     <img class=" imgPlayer p-3 " src="../media/img/pokeCutre/magoPlayer.png" alt="">
                 </div>
-
-
-
-
-
-
-
-
                 <!--? log jugadas-->
                 <div>
                     <div id="logJugador" class=" fsTextJugador alert alert-primary" role="alert"></div>
                 </div>
-
                 <!--? Contenedor de mensajes del jugador -->
                 <div id="" class="">
                     <p class="efectivo badge bg-success d-none">DañoNormal</p>
                     <p class="superEfec badge bg-danger d-none">SuperEfec</p>
                     <p class="noEsEfec badge bg-info d-none">NoEsEfec</p>
                 </div>
-
             </section>
+
         </div>
 
 
@@ -134,8 +205,8 @@
 
 
 
-        <!--! VIDA MAQUINA-->
 
+        <!--! VIDA MAQUINA-->
         <div class="col-12 col-lg-4">
             <section id="vidaMaquina" class="gifMaquina">
 
@@ -173,8 +244,16 @@
         <button id="btnNext" class="btn btn-primary btn-lg mx-5 ">Siguiente</button>
     </div>
 
+    <footer class="bg-body-secondary  border p-2 loginFooter">
+        <div class="container text-center">
+            <p class="py-3 text-white">© 2025 GameLab — Proyecto personal de Yisus.
+                Desarrollado con HTML, CSS y JavaScript.</p>
+        </div>
+    </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 
     <script src="../js/pokeCutre.js"></script>
 </body>
