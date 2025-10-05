@@ -2,7 +2,27 @@
 
 🔗 **Ver online:** [(Pendiente de subir a GitHub Pages)](https://jesus323dev.github.io/GameLab/)
 🚧 **En Construcción**
-⚠️ **Fuera de servicio**
+**GameLab** ya está online 🎉
+
+## 🚀 Estado actual del proyecto
+
+> **GameLab** ya está **online** 🎉  
+> Después de muchas pruebas, la web ya cuenta con:
+
+> **GameLab** ya está **online** 🎉  
+> Después de muchas pruebas, commits y cafés, la web ya cuenta con:
+
+- 🔑 Pantalla de **login funcional** y visualmente completa.  
+- 🪄 Secciones explicativas para los tres minijuegos (**Piedra, Papel o Tijeras**, **Adivina la carta** y **Mago vs Slime**).  
+- 🧩 **Header** y **footer** uniformes en todas las páginas.  
+- 🎨 Diseño general con buena coherencia visual.  
+
+> ⚠️ Nota importante: los **minijuegos aún no son responsive**, están pensados para mostrarse correctamente en pantallas de escritorio.  
+> Próximamente se adaptarán a dispositivos móviles en futuras versiones.  
+
+Aún no está terminado — faltan mejoras, validaciones y algunos ajustes de diseño —  
+pero ya se puede explorar online y ver el progreso real del proyecto.
+
 
 ---
 
