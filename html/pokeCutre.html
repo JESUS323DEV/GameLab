@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yisus">
+    <meta name="description"
+        content="GAME-LAB Web personal donde muestro mi progreso aprendiendo JavaScript aplicado en minijuegos. Cada juego representa una etapa de mi aprendizaje: desde prácticas simples hasta pequeños proyectos con lógica, turnos y efectos visuales.">
+    <meta name="keywords" content="html, css, javascript, game-lab, Yisus , jueguitos,">
     <link rel="icon" href="ruta/a/tu/icono.png" type="image/png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/pokeCutre.css">
-    <title>Document</title>
+    <title>GAME-LAB</title>
 </head>
-
 <body>
+
 
     <header>
         <div class="d-flex align-items-center justify-content-center  bg-body-secondary ">
@@ -22,10 +26,11 @@
         </div>
     </header>
 
+
+    
+    
+    
     <h2 class="text-center bg-body-secondary mt-5 p-4 fs-1">PokéCutre</h2>
-
-
-
 
     <!--! VIDA JUGADOR-->
     <div class="row d-flex align-items-center justify-content-center fondoJuego text-white">
@@ -46,21 +51,24 @@
 
 
 
+
+
+
+
+                <!--? log jugadas-->
+                <div>
+                    <div id="logJugador" class=" fsTextJugador alert alert-primary" role="alert"></div>
+                </div>
+
                 <!--? Contenedor de mensajes del jugador -->
                 <div id="" class="">
-                    <p class="superEfec "></p>
-                    <p class="noEsEfec"></p>
-                    <p class="efectivo"></p>
-
+                    <p class="efectivo badge bg-success d-none">DañoNormal</p>
+                    <p class="superEfec badge bg-danger d-none">SuperEfec</p>
+                    <p class="noEsEfec badge bg-info d-none">NoEsEfec</p>
                 </div>
+
             </section>
-            <!--? log jugadas-->
-            <div>
-                <div id="logJugador" class="border fsTextJugador "></div>
-            </div>
-
         </div>
-
 
 
 
@@ -113,10 +121,10 @@
 
             <!--! BOTÓN DE ATAQUE-->
             <div class="text-center btnAtacar my-3">
-                <button id="btnAttack" class="">ATACAR</button>
+                <button id="btnAttack" class="">ATACAR <br>⚔️</button>
             </div>
             <div class="btnDefensa my-3">
-                <button id="btnNextTurno" class=" d-none">Terminar turno</button>
+                <button id="btnNextTurno" class=" d-none">DEFENDERSE <br> 🛡️ </button>
             </div>
         </div>
 
@@ -144,19 +152,18 @@
                     <img class=" imgMaquina p-3" src="../media/img/pokeCutre/gotaPlayer.png" alt="">
                 </div>
 
-
-
+                <!--todo: log maquina-->
+                <div>
+                    <div id="logMaquina" class="border text-center fsTextMaquina alert alert-danger" role="alert"></div>
+                </div>
 
                 <!--? Contenedor de mensajes de la máquina -->
                 <div id="" class="">
-                    <p class="superEfec"></p>
-                    <p class="noEsEfec"></p>
-                    <p class="efectivo"></p>
+                    <p class="efectivo badge bg-success d-none">DañoNormal</p>
+                    <p class="superEfec badge bg-danger d-none">SuperEfec</p>
+                    <p class="noEsEfec badge bg-info d-none">NoEsEfec</p>
+                </div>
             </section>
-            <!--todo: log maquina-->
-            <div>
-                <div id="logMaquina" class="border text-center fsTextMaquina "></div>
-            </div>
         </div>
 
     </div>

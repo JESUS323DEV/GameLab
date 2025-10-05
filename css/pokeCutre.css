@@ -108,17 +108,23 @@
 
 .btnAtacar button {
     border-radius: 50%;
+    border: 1px solid;
     height: 100px;
     width: 100px;
-
+    background: linear-gradient(to left, rgb(196, 0, 163), rgb(1, 225, 232));
 }
+
 
 .btnDefensa button {
     border-radius: 50%;
+    border: 1px solid;
     height: 100px;
     width: 100px;
+    font-size: 14px;
+    background: linear-gradient(to left, rgb(144, 144, 144), rgb(208, 209, 209));
 
 }
+
 
 .fondoAtaques {
 

@@ -1,0 +1,110 @@
+/*Oscurece Background img*/
+.bgSection {
+    background-image: url("../media/img/bgLogin.jpg");
+    /* capa oscura */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* combina los dos */
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    
+}
+
+/*TEXTO DE BIENVENIDA*/
+.textPrincipal {
+
+    font-size: 1.5rem;
+    color: #fffc63; 
+    text-shadow: #000000;
+
+}
+
+
+/*background login */
+.bgLogin {
+
+    background-color: rgba(0, 0, 0, 0.5);
+    /* capa oscura */
+    background-blend-mode: multiply;
+    /* combina los dos */
+    background-size: cover;
+    background-position: center;
+}
+
+.bgLogin h3 {
+
+    color: red;
+}
+
+
+
+
+/*CONTENEDOR DEL LOGIN*/
+.contLogin {
+
+    padding: 20px;
+
+}
+
+/*CAMPOS INPUT CONTRASEÑA Y USUARIO*/
+.contLogin input {
+
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    opacity: 0.8;
+
+    width: 30%;
+}
+
+.contLogin input::placeholder {
+    color: rgb(0, 0, 0);
+    text-align: start;
+}
+
+
+.contLogin input:focus {
+    border: 2px solid rgb(167, 45, 255);
+    outline: none;
+
+}
+
+/*BOTONES*/
+/*btn readme*/
+
+.btnReadme {
+
+    padding: 10px;
+    width: 15%;
+    background: linear-gradient(to right, rgb(35, 42, 135), rgb(1, 56, 52));
+    color: rgb(243, 243, 245);
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 1px;
+}
+
+.btnReadme:hover {
+
+    box-shadow: 4px 4px 8px #15c2c8, -4px -4px 8px #0fa2a7;
+    transform: scale(1.05);
+}
+
+/*btn login*/
+.btnLogin {
+    padding: 10px;
+    width: 35%;
+    background: linear-gradient(to right, rgb(145, 145, 146), rgb(110, 165, 233));
+    color: black;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 1px;
+
+}
+
+.btnLogin:hover {
+
+
+    box-shadow: 4px 4px 8px #1ff5fc, -4px -4px 8px #75faff;
+    transform: scale(1.05);
+}

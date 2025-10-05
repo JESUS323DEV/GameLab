@@ -79,6 +79,7 @@ btnAttack.addEventListener("click", function () {
         if (radioSelect && turnoJugador === "jugador") {
 
             console.log("🧙‍♂️ El Mago se prepara para atacar...");
+
             setTimeout(() => {
 
 
@@ -100,6 +101,11 @@ btnAttack.addEventListener("click", function () {
                     //TEXTO DE DAÑOS MÁQUINA
                     agregarLogMaquina("🛡️ Slim intentó defenderse con un escudo de " + defensaSlim +
                         ", pero recibió " + dañoTotal + " puntos de daño.")
+
+                    //mostrar badge daño normal
+                    document.querySelectorAll("#vidaJugador .efectivo").forEach(dNormal => {
+                        dNormal.classList.remove("d-none");
+                    });
 
                     //TEXTO ACTUALIZAR VIDA JUGADOR
                     jugadorVida.textContent = "Vida Actual: " + vidaJugadorCount;
@@ -145,6 +151,12 @@ btnAttack.addEventListener("click", function () {
                     agregarLogMaquina("🛡️ Slim intentó defenderse con un escudo de " + defensaSlim +
                         ", pero el golpe fue ¡SÚPER EFECTIVO! y recibió " + dañoTotal + " puntos de daño.");
 
+                    //daños super-efectivo
+                    document.querySelectorAll("#vidaJugador .superEfec").forEach(superEffect => {
+
+                        superEffect.classList.remove("d-none");
+                    });
+
                     //TEXTO ACTUALIZAR VIDA Jugador
                     jugadorVida.textContent = "Vida Actual: " + vidaJugadorCount;
                     barraRellenoJugador.style.width = vidaJugadorCount + "%";
@@ -186,6 +198,11 @@ btnAttack.addEventListener("click", function () {
                     agregarLogMaquina("🛡️ Slim levantó un escudo de " + defensaSlim +
                         " y logró reducir el daño. Solo recibió " + dañoTotal + " puntos.");
 
+                    //mostrar daño no efectivo
+                    document.querySelectorAll("#vidaJugador .noEsEfec").forEach(dNoEffect => {
+                        dNoEffect.classList.remove("d-none");
+                    });
+
                     //TEXTO ACTUALIZAR VIDA jugador
                     jugadorVida.textContent = "Vida Actual: " + vidaJugadorCount;
                     barraRellenoJugador.style.width = vidaJugadorCount + "%";
@@ -213,12 +230,13 @@ btnAttack.addEventListener("click", function () {
 
 
                 }
-                turnoJugador = "maquina"
 
+                turnoJugador = "maquina"
                 btnAttack.disabled = true;
                 btnNextTurno.disabled = false;
                 radioSelect.checked = false;
                 mostrarEscudos()
+                ocultarDañosMaquina()
 
             }, 1000);
 
@@ -228,6 +246,7 @@ btnAttack.addEventListener("click", function () {
         }
     }
 });
+//==================================
 
 //====================================TURNO DE LA MAQUINA ==========================
 
@@ -273,6 +292,12 @@ function ataqueMaquina() {
             agregarLogJugador("🛡️ El Mago levantó un escudo de " + defensaMago +
                 " y redujo el impacto. Solo recibió " + dañoTotal + " puntos de daño.");
 
+            //mostrar daños maquina
+            document.querySelectorAll("#vidaMaquina .efectivo").forEach(dNormal => {
+
+                dNormal.classList.remove("d-none")
+            })
+
             //TEXTO ACTUALIZAR VIDA MAQUINA
             maquinaVida.textContent = "Vida Actual: " + vidaMaquinaCount;
             barraRellenoMaquina.style.width = vidaMaquinaCount + "%";
@@ -283,9 +308,6 @@ function ataqueMaquina() {
 
             // Cambiar color según la vida
             vida0()
-
-
-
 
             //LOG
             console.log("👾 SLIM ELIGIÓ ATAQUE DE " + ataqueSlim);
@@ -319,6 +341,12 @@ function ataqueMaquina() {
             //TEXTO JUGADOR
             agregarLogJugador("🛡️ El Mago intentó protegerse con un escudo de " + defensaMago +
                 ", pero el golpe fue ¡SÚPER EFECTIVO! Recibió " + dañoTotal + " puntos de daño.");
+
+            //mostrar daños maquina
+            document.querySelectorAll("#vidaMaquina .superEfec").forEach(superEffect => {
+
+                superEffect.classList.remove("d-none")
+            })
 
             //TEXTO ACTUALIZAR VIDA MAQUINA
             maquinaVida.textContent = "Vida Actual: " + vidaMaquinaCount;
@@ -360,6 +388,12 @@ function ataqueMaquina() {
             agregarLogJugador("🛡️ El Mago levantó un escudo de " + defensaMago +
                 ". El ataque no fue muy efectivo y solo recibió " + dañoTotal + " puntos de daño.");
 
+            //mostrar daños maquina
+            document.querySelectorAll("#vidaMaquina .noEsEfec").forEach(dNoEffect => {
+
+                dNoEffect.classList.remove("d-none")
+            })
+
             //TEXTO ACTUALIZAR VIDA MAQUINA
             maquinaVida.textContent = "Vida Actual: " + vidaMaquinaCount;
             barraRellenoMaquina.style.width = vidaMaquinaCount + "%";
@@ -398,30 +432,54 @@ function ataqueMaquina() {
         document.querySelectorAll("input[name='ataqueName']").forEach(radio => {
             radio.checked = false;
         });
+        ocultarDañosJugador()
+
 
     }, 1000);
 }
 
+//====================================
 
-//FUNCIONES
+//===================================FUNCIONES==============================================
 
 
-//BTN TERMINAR TURNO
+//====BOTONES====
+//BTN TERMINAR TURNO/DEFENDERSE
 btnNextTurno.addEventListener("click", () => {
     if (turnoJugador === "maquina") {
         ataqueMaquina();
     }
 });
-//PROBABILIDAD DE CRITICO
-function probCritico() {
 
-    let dañoCritico = Math.floor(Math.random() * (15 - 5 + 1)) + 5;
-    return dañoCritico;
+//BOTONES NEXT&BACK&LOGIN
+//BTN BACK
+btnBack.addEventListener("click", function () {
+    window.location.href = "tragaMonedas.html";
+})
 
-}
+//BTN NEXT
+btnNext.addEventListener("click", function () {
+    window.location.href = "";
+})
+
+//BTN LOGIN
+btnBackLogin.addEventListener("click", function () {
+
+    window.location.href = "../index.html"
+})
+
+//BTN LOGIN
+btnBackLogin.addEventListener("click", function () {
+
+    window.location.href = "../index.html"
+})
+//=======================================
 
 
-//AGREGAR Y GUARDAR ATAQUES JUGADOR
+
+//====================== LOG DE BATALLA  EN PANTALLA=============
+//Mostrar / ocultar log de batalla en pantalla
+//Agregar y guardar ataques del jugador
 function agregarLogJugador(mensaje) {
     const log = document.getElementById("logJugador");
 
@@ -431,10 +489,13 @@ function agregarLogJugador(mensaje) {
     }
 
     const p = document.createElement("p");
+
     p.textContent = mensaje;
+    p.style.color = "green"
     log.appendChild(p);
 }
-//AGREGAR Y GUARDAR ATAQUES MAQUINA
+
+//Agregar y guardar ataques de la máquina
 function agregarLogMaquina(mensaje) {
     const log = document.getElementById("logMaquina");
 
@@ -445,12 +506,13 @@ function agregarLogMaquina(mensaje) {
 
     const p = document.createElement("p");
     p.textContent = mensaje;
+    p.style.color = "red"
+
     log.appendChild(p);
 
 }
 
-
-//COLORES DE VIDA
+//Colores de vida (actualización visual)
 function vida0() {
     //  Asegurarse de que las vidas no bajen de 0
     if (vidaJugadorCount < 0) vidaJugadorCount = 0;
@@ -487,10 +549,10 @@ function vida0() {
     }
 }
 
-//==============MOSTRAR/OCULTAR IMG ESCUDOS Y ATAQUES============================
+// ===================== ESCUDOS Y ATAQUES ===================== 
 
 //FUNCIONES MOSTRAR ESCUDOS OCULTAR ATAQUES
-// mostrar escudos
+// Mostrar escudos / ocultar ataques
 function mostrarEscudos() {
     document.querySelectorAll(".imgEscudos").forEach(img => {
         img.classList.remove("d-none");
@@ -504,20 +566,12 @@ function mostrarEscudos() {
 
     });
 
-
-
-
-
-
-
     document.querySelectorAll(".imgAtaques").forEach(img => {
         img.classList.add("d-none"); // ocultar ataques
     });
 }
 
-
-//FUNCIONES OCULTAR ESCUDOS MOSTRAR ATAQUES
-
+// Ocultar escudos / mostrar ataques
 function mostrarAtaques() {
     // mostrar ataques
     document.querySelectorAll(".imgAtaques").forEach(img => {
@@ -539,22 +593,58 @@ function mostrarAtaques() {
 }
 
 
+// ===================== DAÑOS ===================== //
+//ocultar daños de la maquina
+function ocultarDañosMaquina() {
+
+    document.querySelectorAll("#vidaMaquina .efectivo").forEach(dNormal => {
+
+        dNormal.classList.add("d-none")
+    })
+
+    document.querySelectorAll("#vidaMaquina .superEfec").forEach(superEffect => {
+
+        superEffect.classList.add("d-none")
+    })
+
+    document.querySelectorAll("#vidaMaquina .noEsEfec").forEach(dNoEffect => {
+
+        dNoEffect.classList.add("d-none")
+    })
 
 
-//BTN LOGIN
-btnBackLogin.addEventListener("click", function () {
+}
 
-    window.location.href = "../index.html"
-})
+//ocultar daños del jugador
+function ocultarDañosJugador() {
 
-//BTN NEXT
-btnNext.addEventListener("click", function () {
-    window.location.href = "";
-})
+    //quitar badge daño normal
+    document.querySelectorAll("#vidaJugador .efectivo").forEach(dNormal => {
+        dNormal.classList.add("d-none");
+    });
 
-//BTN BACK
-btnBack.addEventListener("click", function () {
-    window.location.href = "tragaMonedas.html";
-})
+    //quitar badge daño super-efectivo
+    document.querySelectorAll("#vidaJugador .superEfec").forEach(superEffect => {
+
+        superEffect.classList.add("d-none");
+    });
+
+    //quitar daño no efectivo
+    document.querySelectorAll("#vidaJugador .noEsEfec").forEach(dNoEffect => {
+        dNoEffect.classList.add("d-none");
+    });
+
+}
+
+//PROBABILIDAD DE CRITICO
+function probCritico() {
+
+    let dañoCritico = Math.floor(Math.random() * (15 - 5 + 1)) + 5;
+    return dañoCritico;
+
+}
+
+
+
 
 
