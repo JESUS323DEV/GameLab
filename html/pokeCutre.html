@@ -20,9 +20,13 @@
 <body>
 
     <header>
-        <div class="contHeader">
+        <div class="contHeader ">
             <h1 class="text-center text-white p-4">Minijuegos - YisusGames - PokéCutre (terminó siendo Mago vs Slime )
             </h1>
+
+            <div class="text-center">
+                <button id="btnBackLogin">Login</button>
+            </div>
 
         </div>
     </header>
@@ -83,37 +87,39 @@
                     <li class="mb-3">Responsividad total</li>
                     <li class="">Y más...</li>
 
-                </ul </div>
-            </div>
-
-            <div class="col-12 p-3 text-center ">
-                <h4>🔁 Lógica de debilidades elementales</h4>
-                <p>El sistema de combate se basa en una lógica de <strong>ventajas y desventajas elementales</strong>,
-                    donde cada tipo de ataque puede ser más o menos efectivo según el elemento del rival.</p>
-                <p>🔥 <strong>Fuego</strong> quema a <strong>Planta</strong> → <em>daño súper efectivo</em>.</p>
-                <p>💧 <strong>Agua</strong> apaga a <strong>Fuego</strong> → <em>daño súper efectivo</em>.</p>
-                <p>🌿 <strong>Planta</strong> absorbe a <strong>Agua</strong> → <em>daño súper efectivo</em>.</p>
-                <p>Si ambos ataques son del mismo tipo, se considera un <strong>empate elemental</strong> y el daño
-                    infligido es <em>normal</em>.</p>
-                <p>Cuando un ataque es de un elemento en desventaja (por ejemplo, <strong>Agua</strong> contra
-                    <strong>Planta</strong>), se considera <em>no efectivo</em> y causa menos daño.
-                </p>
-                <p>💥 Además, durante cada ataque se calcula un posible <strong>daño crítico</strong> mediante un número
-                    aleatorio entre <strong>5 y 15</strong>, que se suma al daño total final (sí, aún falta pulirlo 😅).
-                </p>
-
+                </ul>
             </div>
         </div>
 
+        <div class="col-12 p-3 text-center ">
+            <h4>🔁 Lógica de debilidades elementales</h4>
+            <p>El sistema de combate se basa en una lógica de <strong>ventajas y desventajas elementales</strong>,
+                donde cada tipo de ataque puede ser más o menos efectivo según el elemento del rival.</p>
+            <p>🔥 <strong>Fuego</strong> quema a <strong>Planta</strong> → <em>daño súper efectivo</em>.</p>
+            <p>💧 <strong>Agua</strong> apaga a <strong>Fuego</strong> → <em>daño súper efectivo</em>.</p>
+            <p>🌿 <strong>Planta</strong> absorbe a <strong>Agua</strong> → <em>daño súper efectivo</em>.</p>
+            <p>Si ambos ataques son del mismo tipo, se considera un <strong>empate elemental</strong> y el daño
+                infligido es <em>normal</em>.</p>
+            <p>Cuando un ataque es de un elemento en desventaja (por ejemplo, <strong>Agua</strong> contra
+                <strong>Planta</strong>), se considera <em>no efectivo</em> y causa menos daño.
+            </p>
+            <p>💥 Además, durante cada ataque se calcula un posible <strong>daño crítico</strong> mediante un número
+                aleatorio entre <strong>5 y 15</strong>, que se suma al daño total final (sí, aún falta pulirlo 😅).
+            </p>
 
-
+        </div>
     </div>
 
 
 
+
+
+
+
     <!--! BLOQUE DE MAGO Y SLIME Y ATAQUES-->
-    <div class="row d-flex align-items-center justify-content-center fondoJuego text-white">
-        <div id="vidaJugador" class="flex-column col-12 col-lg-4">
+    <div class="row d-flex  fondoJuego text-white">
+
+        <div id="vidaJugador" class="flex-column col-6 col-lg-4 mx-auto">
             <!--!SECCIÓN JUGADOR-->
             <section id="jugadorVida" class="gifJugador">
                 <!-- todo: IMG - VIDA JUGADOR1-->
@@ -123,16 +129,16 @@
                         <div class="barraRellenoJugador"></div>
                     </div>
                 </div>
-                <div class="text-center">
+                <div class="">
                     <!-- todo: IMG - JUGADOR1-->
-                    <img class=" imgPlayer p-3 " src="../media/img/pokeCutre/magoPlayer.png" alt="">
+                    <img class=" imgPlayer  " src="../media/img/pokeCutre/magoPlayer.png" alt="">
                 </div>
                 <!--? log jugadas-->
                 <div>
                     <div id="logJugador" class=" fsTextJugador alert alert-primary" role="alert"></div>
                 </div>
                 <!--? Contenedor de mensajes del jugador -->
-                <div id="" class="">
+                <div>
                     <p class="efectivo badge bg-success d-none">DañoNormal</p>
                     <p class="superEfec badge bg-danger d-none">SuperEfec</p>
                     <p class="noEsEfec badge bg-info d-none">NoEsEfec</p>
@@ -147,24 +153,27 @@
 
 
         <!--! RADIOS DE ATAQUE-->
-        <div class="col-12 col-lg-3 d-flex flex-column text-center border fondoAtaques ">
+
+        <div class="order-4 order-lg-3 col-12 col-lg-2 mx-lg-auto d-flex flex-col flex-lg-column
+                    text-center border fondoAtaques ">
+
 
             <!--todo: Ataque fuego-->
-            <div class="my-3 d-flex flex-column">
+            <div class="my-0 my-lg-3 d-flex flex-column">
                 <!--! IMG ESCUDO DE FUEGO-->
                 <img src="../media/img/pokeCutre/escudoFuego.png" class="imgEscudos d-none mx-auto escudoFuego" alt="">
 
                 <!--! IMG ATAQUE DE FUEGO-->
-                <img class="imgAtaques mx-auto" src="../media/img/pokeCutre/ataqueFuego.png" alt="">
+                <img class="imgAtaques  mx-auto" src="../media/img/pokeCutre/ataqueFuego.png" alt="">
 
                 <!--! RADIO FUEGO-->
-                <label class="fuego" for=""> Ataque de Fuego </label>
+                <label class="fuego"> Ataque de Fuego </label>
                 <input type="radio" name="ataqueName" value="fuego" id="attackFuego">
             </div>
 
 
             <!--todo: Ataque Agua-->
-            <div class="my-3 d-flex flex-column">
+            <div class="my-0 my-lg-3 d-flex flex-column">
 
                 <!--! IMG ESCUDO DE AGUA-->
                 <img src="../media/img/pokeCutre/escudoAgua.png" class="imgEscudos d-none mx-auto " alt="">
@@ -172,12 +181,12 @@
                 <!--! IMG ATAQUE DE AGUA-->
                 <img class="imgAtaques mx-auto" src="../media/img/pokeCutre/ataqueAgua.png" alt="">
 
-                <label class="agua" for="">Ataque de Agua</label>
+                <label class="agua" >Ataque de Agua</label>
                 <input type="radio" name="ataqueName" value="agua" id="attackAgua">
             </div>
 
             <!--todo: Ataque Planta-->
-            <div class="my-3 d-flex flex-column">
+            <div class="my-0 my-lg-3 d-flex flex-column">
 
                 <!--! IMG ESCUDO DE PLANTA-->
                 <img src="../media/img/pokeCutre/escudoPlanta.png" class="imgEscudos d-none mx-auto " alt=""
@@ -186,28 +195,26 @@
                 <!--! IMG ATAQUE DE PLANTA-->
                 <img class="imgAtaques mx-auto" src="../media/img/pokeCutre/ataquePlanta.png" alt="">
 
-                <label class="my-2 planta" for="">Ataque de Planta</label>
+                <label class="my-0 my-lg-2 planta" >Ataque de Planta</label>
                 <input type="radio" name="ataqueName" value="planta" id="attackPlanta">
             </div>
 
             <!--! BOTÓN DE ATAQUE-->
-            <div class="text-center btnAtacar my-3">
-                <button id="btnAttack" class="">ATACAR <br>⚔️</button>
-            </div>
-            <div class="btnDefensa my-3">
-                <button id="btnNextTurno" class=" d-none">DEFENDERSE <br> 🛡️ </button>
+            <div class="justify-content-center align-content-center p-2">
+                <div class="text-center btnAtacar my-0 my-lg-3 align-content-center justify-content-center">
+                    <button id="btnAttack" class="">ATACAR <br>⚔️</button> <br>
+                </div>
+
+                <div class="btnDefensa my-0 my-lg-3 align-content-center justify-content-center">
+                    <button id="btnNextTurno" class=" d-none">DEFENDERSE <br> 🛡️ </button>
+                </div>
             </div>
         </div>
 
 
 
-
-
-
-
-
         <!--! VIDA MAQUINA-->
-        <div class="col-12 col-lg-4">
+        <div class="order-2 order-lg-3 col-6 col-lg-4 mx-auto">
             <section id="vidaMaquina" class="gifMaquina">
 
                 <!-- todo: IMG - VIDA MAQUINA-->
@@ -229,7 +236,7 @@
                 </div>
 
                 <!--? Contenedor de mensajes de la máquina -->
-                <div id="" class="">
+                <div >
                     <p class="efectivo badge bg-success d-none">DañoNormal</p>
                     <p class="superEfec badge bg-danger d-none">SuperEfec</p>
                     <p class="noEsEfec badge bg-info d-none">NoEsEfec</p>
@@ -240,8 +247,8 @@
     </div>
 
     <div class="text-center my-5 ">
-        <button id="btnBack" class="btn btn-primary btn-lg mx-5 ">Anterior</button>
-        <button id="btnNext" class="btn btn-primary btn-lg mx-5 ">Siguiente</button>
+        <button id="btnBack" class="btn btn-primary btn-lg mx-0 mx-lg-5 ">Anterior</button>
+        <button id="btnNext" class="btn btn-primary btn-lg mx-0 mx-lg-5 ">Siguiente</button>
     </div>
 
     <footer class="bg-body-secondary  border p-2 loginFooter">

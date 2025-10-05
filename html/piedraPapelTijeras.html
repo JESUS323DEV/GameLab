@@ -70,35 +70,39 @@
                     <li>Optimizar el código y separar la lógica del diseño.</li>
                     <li>Añadir una breve animación al seleccionar cada jugada.</li>
                     <li>Responsividad total</li>
-                </ul </div>
+                </ul>
             </div>
         </div>
+
+        <!--! SECCIÓN DEL JUEGO-->
+        <section class="mt-5">
+            <div class="row mx-auto bgGif container cont-imgPuños text-center">
+                <div class="col-6 col-lg-6">
+                    <img class="imgPuño1 img-fluid " id="imgPuño1" src="../media/img/puño2.png" alt="puño 2">
+                </div>
+                <div class="col-6 col-lg-6">
+                    <img class="imgPuño2 img-fluid " id="imgPuño2" src="../media/img/puño.png" alt="puño 1">
+                </div>
+
+
+                <p class="fs-5  w-75 mx-auto resultadoText resultado1"></p>
+
+                <!--? IMG-BTN-->
+                <div>
+                    <img class="img-btn mx-3 img-fluid " id="imgBtnPiedra" src="../media/img/piedra-btn.png"
+                        alt="Piedra">
+                    <img class="img-btn mx-3 img-fluid " id="imgBtnPapel" src="../media/img/papel-btn.png" alt="Papel">
+                    <img class="img-btn mx-3 img-fluid " id="imgBtnTijeras" src="../media/img/tijeras-btn.png"
+                        alt="Tijeras">
+                </div>
+
+                <div class="d-flex align-items-center justify-content-center gap-5 my-5">
+                    <p class="fw-bold puntosText fs-5 puntosMaquina p-2 w-50">Punto CPU: 0</p>
+                    <p class="fw-bold puntosText p-2 fs-5 puntosJugador w-50">Punto JUG: 0</p>
+                </div>
+            </div>
+        </section>
     </div>
-
-    <!--! SECCIÓN DEL JUEGO-->
-    <section class="mt-5">
-        <div class="bgGif  container cont-imgPuños border text-center ">
-            <div>
-                <img class="imgPuño1 img-fluid " id="imgPuño1" src="../media/img/puño2.png" alt="puño 2">
-                <img class="imgPuño2 img-fluid " id="imgPuño2" src="../media/img/puño.png" alt="puño 1">
-            </div>
-
-            <p class="fs-5  w-75 mx-auto resultadoText resultado1"></p>
-
-            <!--? IMG-BTN-->
-            <div>
-                <img class="img-btn mx-3 img-fluid " id="imgBtnPiedra" src="../media/img/piedra-btn.png" alt="Piedra">
-                <img class="img-btn mx-3 img-fluid " id="imgBtnPapel" src="../media/img/papel-btn.png" alt="Papel">
-                <img class="img-btn mx-3 img-fluid " id="imgBtnTijeras" src="../media/img/tijeras-btn.png"
-                    alt="Tijeras">
-            </div>
-
-            <div class="d-flex align-items-center justify-content-center gap-5 my-5">
-                <p class="fw-bold puntosText fs-5 puntosMaquina p-2">Puntos de la Maquina: 0</p>
-                <p class="fw-bold puntosText p-2 fs-5 puntosJugador">Puntos del jugador: 0</p>
-            </div>
-        </div>
-    </section>
 
     <div class="text-center my-5">
         <button class="btn btn-primary btn-lg " id="btnNext">Siguiente</button>

@@ -152,8 +152,79 @@
         color: rgb(0, 0, 0);
         padding: 5px;
         z-index: 9999;
+    }
+
+    .imgPlayer {
+
+        width: 200px;
+        height: 200px;
+        transform: scaleX(-1);
 
     }
+
+    .imgMaquina {
+        width: 200px;
+        height: 200px;
+
+    }
+
+    .btnAtacar button {
+        border-radius: 50%;
+        border: 1px solid;
+        height: 100px;
+        width: 100px;
+    }
+
+    .imgAtaques {
+
+        max-width: 100%;
+        width: 50%;
+    }
+
+    .imgEscudos {
+
+        max-width: 100%;
+        width: 50%;
+    }
+
+    .agua,
+    .fuego,
+    .planta {
+        font-size: 13px;
+        padding-bottom: 20px !important;
+        display: inline-block;
+    }
+
+    input {
+
+        margin-bottom: 10px !important;
+    }
+
+
+
+    .btnAtacar button {
+        border: 1px solid;
+        height: 80px;
+        width: 80px;
+        font-size: 15px;
+    }
+
+
+    .btnDefensa button {
+        border: 1px solid;
+        height: 80px;
+        width: 80px;
+        font-size: 10px;
+
+    }
+
+    .fsTextJugador, .fsTextMaquina {
+
+        font-size: 10px;
+    }
+
+
+
 
 }
 
