@@ -108,6 +108,14 @@
     transform: scale(1.05);
 }
 
+
+label[for="recordarContra"],
+label.text-white.border.w-50 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
 /* =====================
    MEDIA QUERIES RESPONSIVE
    ===================== */

@@ -56,18 +56,23 @@
 
 
         <!--!LOGIN-->
-        <div class="divForm container mt-5 border border rounded-5 w-50 bgLogin cont-w-100 ">
+        <div class="divForm container mt-5 border rounded-5 w-50 bgLogin cont-w-100 ">
             <form id="formLogin" action="">
                 <h3 class="text-center fs-1 my-3">LOGIN</h3>
 
                 <div class=" d-flex flex-column align-items-center justify-content-center contLogin">
                     <label class=" " for="inputUsuario"></label>
 
-                    <input type="text" name="usuario" id="inputUsuario" class="mb-4 cont-w-100" placeholder="Usuario: admin">
+                    <input type="text" name="usuario" id="inputUsuario" class="mb-4 cont-w-100"
+                        placeholder="Usuario: admin">
 
                     <label class="" for="inputPassword"></label>
 
-                    <input type="password" name="password" id="inputPassword" class="cont-w-100" placeholder="Contraseña: 1234 ">
+                    <input type="password" name="password" id="inputPassword" class="cont-w-100"
+                        placeholder="Contraseña: 1234 ">
+
+
+
                 </div>
 
                 <div class="reset text-center mb-5">
@@ -75,6 +80,12 @@
                     <p class="loginIntentos text-white"></p>
                     <!--!Botón login-->
                     <button class="btnLogin">Login</button>
+                    <div class="text-white my-2">
+                        <label>
+                            <input type="checkbox" id="recordarContra">
+                            Recordar Contraseña
+                        </label>
+                    </div>
                 </div>
 
 

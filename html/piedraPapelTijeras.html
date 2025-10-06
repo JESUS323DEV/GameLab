@@ -24,6 +24,9 @@
         <div class="contHeader">
             <h1 class="text-center text-white p-4">Minijuegos - YisusGames - Piedra, Papel o Tijeras</h1>
         </div>
+        <div class="text-center">
+            <button id="btnBackLogin">Login</button>
+        </div>
     </header>
 
 
@@ -54,6 +57,7 @@
                 <p>Elige una opción haciendo clic en el botón correspondiente.</p>
                 <p>La máquina elegirá automáticamente su jugada al azar.</p>
                 <p>Se mostrará el resultado: ganaste, perdiste o empate.</p>
+                <p>Si tú o el la CPU gana 3 veces se acaba el juego.</p>
                 <p>¡Vuelve a intentarlo las veces que quieras!</p>
             </div>
 
@@ -62,47 +66,66 @@
             <div class="col-12 col-lg-4 p-3 text-start border ">
                 <h5 class="mb-4 text-center">Próximos pasos</h5>
                 <ul>
-                    <li>Añadir contador de victorias, derrotas y empates.</li>
+                    <li><del>Añadir contador de victorias, derrotas y empates.</del> Faltan mejores visuales</li>
+                    <li><del>Responsividad total</del></li>
+                    <li><del>Crear un botón de “Reiniciar partida”.</del></li>
+
+
                     <li>Incluir una animación o efecto visual al mostrar el resultado.</li>
                     <li>Agregar sonidos de clic y resultado (ganar, perder, empate).</li>
                     <li>Mejorar el diseño visual con iconos o imágenes animadas.</li>
-                    <li>Crear un botón de “Reiniciar partida”.</li>
                     <li>Optimizar el código y separar la lógica del diseño.</li>
                     <li>Añadir una breve animación al seleccionar cada jugada.</li>
-                    <li>Responsividad total</li>
                 </ul>
             </div>
         </div>
-
-        <!--! SECCIÓN DEL JUEGO-->
-        <section class="mt-5">
-            <div class="row mx-auto bgGif container cont-imgPuños text-center">
-                <div class="col-6 col-lg-6">
-                    <img class="imgPuño1 img-fluid " id="imgPuño1" src="../media/img/puño2.png" alt="puño 2">
-                </div>
-                <div class="col-6 col-lg-6">
-                    <img class="imgPuño2 img-fluid " id="imgPuño2" src="../media/img/puño.png" alt="puño 1">
-                </div>
-
-
-                <p class="fs-5  w-75 mx-auto resultadoText resultado1"></p>
-
-                <!--? IMG-BTN-->
-                <div>
-                    <img class="img-btn mx-3 img-fluid " id="imgBtnPiedra" src="../media/img/piedra-btn.png"
-                        alt="Piedra">
-                    <img class="img-btn mx-3 img-fluid " id="imgBtnPapel" src="../media/img/papel-btn.png" alt="Papel">
-                    <img class="img-btn mx-3 img-fluid " id="imgBtnTijeras" src="../media/img/tijeras-btn.png"
-                        alt="Tijeras">
-                </div>
-
-                <div class="d-flex align-items-center justify-content-center gap-5 my-5">
-                    <p class="fw-bold puntosText fs-5 puntosMaquina p-2 w-50">Punto CPU: 0</p>
-                    <p class="fw-bold puntosText p-2 fs-5 puntosJugador w-50">Punto JUG: 0</p>
-                </div>
-            </div>
-        </section>
     </div>
+
+    <!--! SECCIÓN DEL JUEGO-->
+    <section class="mt-5">
+
+        <div class="row mx-auto bgGif container cont-imgPuños text-center">
+            <p class="winTextJugador"></p>
+            <p class="loseTextJugador"></p>
+            <div class="col-6 col-lg-6">
+                <img class="imgPuño1 img-fluid " id="imgPuño1" src="../media/img/puño2.png" alt="puño 2">
+
+            </div>
+
+            <div class="col-6 col-lg-6">
+                <img class="imgPuño2 img-fluid " id="imgPuño2" src="../media/img/puño.png" alt="puño 1">
+            </div>
+
+
+            <p class="fs-5  w-75 mx-auto resultadoText resultado1"></p>
+
+            <!--? IMG-BTN-->
+            <div id="contImg" class="">
+                <img class="img-btn mx-3 img-fluid " id="imgBtnPiedra" src="../media/img/piedra-btn.png" alt="Piedra">
+                <img class="img-btn mx-3 img-fluid " id="imgBtnPapel" src="../media/img/papel-btn.png" alt="Papel">
+                <img class="img-btn mx-3 img-fluid " id="imgBtnTijeras" src="../media/img/tijeras-btn.png"
+                    alt="Tijeras">
+            </div>
+
+            <div class="text-center ">
+                <button class="d-none resetBtn" id="btnResetGame">Volver a jugar</button>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center gap-5 my-5">
+
+
+                <p class="fw-bold puntosText fs-5 puntosMaquina p-2 w-50">Punto CPU: 0</p>
+                <p class="fw-bold puntosText p-2 fs-5 puntosJugador w-50">Punto JUG: 0</p>
+
+
+            </div>
+        </div>
+
+    </section>
+    </div>
+
+
+
 
     <div class="text-center my-5">
         <button class="btn btn-primary btn-lg " id="btnNext">Siguiente</button>
@@ -118,7 +141,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <script src="js/login.js"></script>
     <script src="../js/piedraPapelTijeras.js"></script>
 </body>
 
