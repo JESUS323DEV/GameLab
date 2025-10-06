@@ -111,11 +111,11 @@ Son simples, pero para mí son **grandes logros**.
 ## 🚀 Próximos pasos
 
 - [x] Subir la colección completa a **GitHub Pages** para jugar online 
-- [x] Mejorar el diseño visual de cada juego  
+- [x] Mejorar el diseño visual de cada juego  **En progreso 🚧**
 - [ ] Añadir más mejoras visuales en general 
 - [ ] Añadir más juegos a la colección  
 - [ ] Hacer un menú inicial con previews de cada miniJuegos
-- [ ] Responsividad total en **Dispositivos móviles**
+- [x] Responsividad total en **Dispositivos móviles En progreso 🚧**
 
 ---
 
