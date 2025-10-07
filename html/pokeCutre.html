@@ -133,17 +133,28 @@
                     <!-- todo: IMG - JUGADOR1-->
                     <img class=" imgPlayer  " src="../media/img/pokeCutre/magoPlayer.png" alt="">
                 </div>
-                <!--? log jugadas-->
+                <!--! log jugadas-->
                 <div>
                     <div id="logJugador" class=" fsTextJugador alert alert-primary" role="alert"></div>
                 </div>
-                <!--? Contenedor de mensajes del jugador -->
+                <!--! Contenedor de mensajes del jugador -->
                 <div>
                     <p class="efectivo badge bg-success d-none">DañoNormal</p>
                     <p class="superEfec badge bg-danger d-none">SuperEfec</p>
                     <p class="noEsEfec badge bg-info d-none">NoEsEfec</p>
                 </div>
+
             </section>
+
+
+            <div>
+                <button type="button" id="btnPots" class="">Elegir poción</button>
+            </div>
+
+            <div>
+                <img class="imgPociones" data-potion="vida" src="../media/img/pokeCutre/pocionVida.png" alt="">
+                <img class="imgPociones" data-potion="critico" src="../media/img/pokeCutre/pocionCritico.png" alt="">
+            </div>
 
         </div>
 
@@ -181,7 +192,7 @@
                 <!--! IMG ATAQUE DE AGUA-->
                 <img class="imgAtaques mx-auto" src="../media/img/pokeCutre/ataqueAgua.png" alt="">
 
-                <label class="agua" >Ataque de Agua</label>
+                <label class="agua">Ataque de Agua</label>
                 <input type="radio" name="ataqueName" value="agua" id="attackAgua">
             </div>
 
@@ -195,7 +206,7 @@
                 <!--! IMG ATAQUE DE PLANTA-->
                 <img class="imgAtaques mx-auto" src="../media/img/pokeCutre/ataquePlanta.png" alt="">
 
-                <label class="my-0 my-lg-2 planta" >Ataque de Planta</label>
+                <label class="my-0 my-lg-2 planta">Ataque de Planta</label>
                 <input type="radio" name="ataqueName" value="planta" id="attackPlanta">
             </div>
 
@@ -236,15 +247,15 @@
                 </div>
 
                 <!--? Contenedor de mensajes de la máquina -->
-                <div >
+                <div>
                     <p class="efectivo badge bg-success d-none">DañoNormal</p>
                     <p class="superEfec badge bg-danger d-none">SuperEfec</p>
                     <p class="noEsEfec badge bg-info d-none">NoEsEfec</p>
                 </div>
             </section>
         </div>
-
     </div>
+
 
     <div class="text-center my-5 ">
         <button id="btnBack" class="btn btn-primary btn-lg mx-0 mx-lg-5 ">Anterior</button>

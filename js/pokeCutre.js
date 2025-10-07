@@ -1,3 +1,5 @@
+
+
 // --- Jugador ---
 let vidaJugador = document.getElementById("vidaJugador");
 let barraVidaJugador = document.querySelector(".barraVidaJugador");
@@ -25,13 +27,23 @@ let attackFuego = document.getElementById("attackFuego");
 let attackAgua = document.getElementById("attackAgua");
 let attackPlanta = document.getElementById("attackPlanta");
 
+//--- Pociones (img) --
+let vidaPots = document.getElementById("vidaPots");
+let criticoPots = document.getElementById("criticoPots");
+
+
+
+
 // --- Botón ---
 let btnAttack = document.getElementById("btnAttack");
 let btnNextTurno = document.getElementById("btnNextTurno");
+let btnPots = document.getElementById("btnPots")
 //Botones next/back
 let btnNext = document.getElementById("btnNext");
 let btnBack = document.getElementById("btnBack");
 let btnBackLogin = document.getElementById("btnBackLogin");
+
+
 
 // --- creamos array ---
 let ataques = ["fuego", "agua", "planta"]
@@ -44,6 +56,9 @@ let vidaMaquinaCount = 100;
 jugadorVida.textContent = "Vida: " + vidaJugadorCount;
 maquinaVida.textContent = "vida : " + vidaMaquinaCount;
 
+//ataque base  + poción de ataque
+let buffVida = 50;
+let buffCritico = 8;
 
 //daño normal
 let dañoNormal = 5;
@@ -59,14 +74,88 @@ let turnoJugador = "jugador";
 
 //turno maquina
 let turnoMaquina = "maquina";
-
-
-
+//btn siguiente turno
 btnNextTurno.disabled = true;
+
+
+let criticBuff = 0;
+
+
+
+
+let buffMago = null;
+const buff = document.querySelectorAll('[data-potion]');
+buff.forEach(pocion => {
+
+    pocion.addEventListener('click', () => {
+        buffMago = pocion.dataset.potion;
+
+    })
+})
+
+
+
+
+
+btnPots.addEventListener("click", function () {
+
+    if (buffMago === "vida") {
+
+        vidaJugadorCount = 150;
+        console.log("Vida actual " + vidaJugadorCount)
+
+        jugadorVida.textContent = "Vida Actual: " + vidaJugadorCount;
+
+    } else if (buffMago === "critico") {
+        
+        
+        criticBuff = 8;
+
+
+        console.log("Critico" + criticBuff)
+
+
+
+
+
+
+
+    }
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // ---FUNCIÓN ATAQUE JUGADOR ---
 btnAttack.addEventListener("click", function () {
+
 
     // ---DEFENSA RANDOM DE LA MAQUINA ---
     const defensaSlim = ataques[Math.floor(Math.random() * ataques.length)];
@@ -247,6 +336,8 @@ btnAttack.addEventListener("click", function () {
     }
 });
 //==================================
+
+
 
 //====================================TURNO DE LA MAQUINA ==========================
 
@@ -440,9 +531,9 @@ function ataqueMaquina() {
 
 //====================================
 
+
+
 //===================================FUNCIONES==============================================
-
-
 //====BOTONES====
 //BTN TERMINAR TURNO/DEFENDERSE
 btnNextTurno.addEventListener("click", () => {
@@ -639,7 +730,7 @@ function ocultarDañosJugador() {
 //PROBABILIDAD DE CRITICO
 function probCritico() {
 
-    let dañoCritico = Math.floor(Math.random() * (15 - 5 + 1)) + 5;
+    let dañoCritico = Math.floor(Math.random() * (10 - 5 + 1)) + 5 + criticBuff;
     return dañoCritico;
 
 }
