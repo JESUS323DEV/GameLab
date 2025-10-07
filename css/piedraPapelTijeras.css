@@ -19,6 +19,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    height: 650px;
+    overflow: hidden;
 }
 
 /*animaciones puños*/
@@ -54,7 +57,7 @@
 
 .resetBtn:hover {
 
-    transform:  scale(1.15);
+    transform: scale(1.15);
 }
 
 
@@ -77,16 +80,20 @@
 }
 
 .puntosText {
-
     background: linear-gradient(to right, rgb(0, 0, 0), rgb(251, 251, 251));
-    border-radius: 5px;
+
 }
 
-.resultadoText {
 
-    background: linear-gradient(to left, rgb(255, 166, 0), rgb(238, 0, 0));
+.resultado1 {
+    color: white;
+    background: linear-gradient(to left, rgb(255, 115, 0), red) red;
+    padding: 10px;
+    font-size: 20px;
+  
+
+
 }
-
 
 /* =====================
    MEDIA QUERIES RESPONSIVE

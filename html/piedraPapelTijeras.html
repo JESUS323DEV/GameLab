@@ -68,10 +68,11 @@
                 <ul>
                     <li><del>Añadir contador de victorias, derrotas y empates.</del></li>
                     <li><del>Responsividad total</del></li>
-                    <li><del>Crear un botón y animación de “Reiniciar partida”.</del> Faltan mejores visuales</li>
+                    <li><del>Crear un botón y animación de “Reiniciar partida”.</del> <br> <del>** Faltan mejores visuales **</del>
+                    </li>
+                    <li><del>Incluir una animación o efecto visual al mostrar el resultado.</del></li>
 
 
-                    <li>Incluir una animación o efecto visual al mostrar el resultado.</li>
                     <li>Agregar sonidos de clic y resultado (ganar, perder, empate).</li>
                     <li>Mejorar el diseño visual con iconos o imágenes animadas.</li>
                     <li>Optimizar el código y separar la lógica del diseño.</li>
@@ -85,40 +86,58 @@
     <section class="mt-5">
 
         <div class="row mx-auto bgGif container cont-imgPuños text-center">
+
+            <!--!TEXT win-lose-->
             <p class="winTextJugador"></p>
             <p class="loseTextJugador"></p>
-            <div class="col-6 col-lg-6">
-                <img class="imgPuño1 img-fluid " id="imgPuño1" src="../media/img/puño2.png" alt="puño 2">
 
+            <!--!IMG win-lose-->
+            <div>
+                <img class="d-none" id="win" src="../media/img/PuñoPapelTijeras/youWin.png" alt="">
+                <img class="d-none " id="lose" src="../media/img/PuñoPapelTijeras/youLose.png" alt="">
             </div>
 
-            <div class="col-6 col-lg-6">
-                <img class="imgPuño2 img-fluid " id="imgPuño2" src="../media/img/puño.png" alt="puño 1">
-            </div>
-
-
-            <p class="fs-5  w-75 mx-auto resultadoText resultado1"></p>
-
-            <!--? IMG-BTN-->
-            <div id="contImg" class="">
-                <img class="img-btn mx-3 img-fluid " id="imgBtnPiedra" src="../media/img/piedra-btn.png" alt="Piedra">
-                <img class="img-btn mx-3 img-fluid " id="imgBtnPapel" src="../media/img/papel-btn.png" alt="Papel">
-                <img class="img-btn mx-3 img-fluid " id="imgBtnTijeras" src="../media/img/tijeras-btn.png"
-                    alt="Tijeras">
-            </div>
-
+            <!--!BUTTON volver a jugar-->
             <div class="text-center ">
                 <button class="d-none resetBtn" id="btnResetGame">Volver a jugar</button>
             </div>
 
+
+            <!--!IMG puño-->
+            <div class="col-6 col-lg-6">
+                <img class="imgPuño1 img-fluid " id="imgPuño1" src="../media/img/PuñoPapelTijeras/puño2.png"
+                    alt="puño 2">
+            </div>
+
+            <!--!IMG puño-->
+            <div class="col-6 col-lg-6">
+                <img class="imgPuño2 img-fluid " id="imgPuño2" src="../media/img/PuñoPapelTijeras/puño.png"
+                    alt="puño 1">
+            </div>
+
+            <!--!TEXT resultado-->
+            <div class="my-3 resultado1 badge "></div>
+
+            <!--! IMG-BTN-->
+            <div id="contImg" class="">
+                <img class="img-btn mx-3 img-fluid " id="imgBtnPiedra"
+                    src="../media/img/PuñoPapelTijeras/piedra-btn.png" alt="Piedra">
+
+                <img class="img-btn mx-3 img-fluid " id="imgBtnPapel" src="../media/img/PuñoPapelTijeras/papel-btn.png"
+                    alt="Papel">
+
+                <img class="img-btn mx-3 img-fluid " id="imgBtnTijeras"
+                    src="../media/img/PuñoPapelTijeras/tijeras-btn.png" alt="Tijeras">
+            </div>
+
+
+            <!--!TEXT puntos jugador CPU-->
             <div class="d-flex align-items-center justify-content-center gap-5 my-5">
-
-
                 <p class="fw-bold puntosText fs-5 puntosMaquina p-2 w-50">Punto CPU: 0</p>
                 <p class="fw-bold puntosText p-2 fs-5 puntosJugador w-50">Punto JUG: 0</p>
-
-
             </div>
+
+
         </div>
 
     </section>
@@ -126,7 +145,7 @@
 
 
 
-
+    <!--! botones-->
     <div class="text-center my-5">
         <button class="btn btn-primary btn-lg " id="btnNext">Siguiente</button>
     </div>

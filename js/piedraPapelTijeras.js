@@ -50,10 +50,11 @@ function okPiedra() {
 
     } else if (pptRandom === 1) {
         resultado1.textContent = "Perdiste 😭 ";
+
         puntosPerder++;
 
         puntosMaquina.textContent = "Puntos de la Maquina: " + puntosPerder;
-        imgPuño1.src = "../media/img/papel-btn.png"
+        imgPuño1.src = "../media/img/PuñoPapelTijeras/papel-btn.png"
         imgPuño1.style.animation = "none";
         imgPuño2.style.animation = "none";
         winMaquina++;
@@ -68,7 +69,8 @@ function okPiedra() {
         resultado1.textContent = "Ganaste 😎";
         puntosGanar++;
         puntosJugador.textContent = "Puntos del jugador: " + puntosGanar;
-        imgPuño1.src = "../media/img/tijeras-btn.png";
+
+        imgPuño1.src = "../media/img/PuñoPapelTijeras/tijeras-btn.png";
         imgPuño1.style.animation = "none";
         imgPuño1.style.transform = "scaleX(-1)";
         imgPuño2.style.animation = "none";
@@ -102,10 +104,10 @@ function okPapel() {
 
     if (pptRandom === jugador) {
         resultado1.textContent = "Empate 😐";
-        imgPuño2.src = "../media/img/papel-btn.png";
+        imgPuño2.src = "../media/img/PuñoPapelTijeras/papel-btn.png";
         imgPuño2.style.transform = "scaleX(-1)";
         imgPuño2.style.animation = "none";
-        imgPuño1.src = "../media/img/papel-btn.png";
+        imgPuño1.src = "../media/img/PuñoPapelTijeras/papel-btn.png";
         imgPuño1.style.animation = "none";
         resetPuños()
 
@@ -114,10 +116,10 @@ function okPapel() {
         resultado1.textContent = "Perdiste 😭";
         puntosPerder++;
         puntosMaquina.textContent = "Puntos de la Maquina: " + puntosPerder;
-        imgPuño2.src = "../media/img/papel-btn.png";
+        imgPuño2.src = "../media/img/PuñoPapelTijeras/papel-btn.png";
         imgPuño2.style.transform = "scaleX(-1)";
         imgPuño2.style.animation = "none";
-        imgPuño1.src = "../media/img/tijeras-btn.png";
+        imgPuño1.src = "../media/img/PuñoPapelTijeras/tijeras-btn.png";
         imgPuño1.style.transform = "scaleX(-1)";
         imgPuño1.style.animation = "none";
         winMaquina++;
@@ -132,7 +134,7 @@ function okPapel() {
         resultado1.textContent = "Ganaste 😎";
         puntosGanar++;
         puntosJugador.textContent = "Puntos del jugador: " + puntosGanar;
-        imgPuño2.src = "../media/img/papel-btn.png";
+        imgPuño2.src = "../media/img/PuñoPapelTijeras/papel-btn.png";
         imgPuño2.style.transform = "scaleX(-1)"
         imgPuño2.style.animation = "none";
         imgPuño1.style.animation = "none";
@@ -163,9 +165,9 @@ function okTijeras() {
 
     if (pptRandom === jugador) {
         resultado1.textContent = "Empate 😐";
-        imgPuño2.src = "../media/img/tijeras-btn.png";
+        imgPuño2.src = "../media/img/PuñoPapelTijeras/tijeras-btn.png";
         imgPuño2.style.animation = "none";
-        imgPuño1.src = "../media/img/tijeras-btn.png";
+        imgPuño1.src = "../media/img/PuñoPapelTijeras/tijeras-btn.png";
         imgPuño1.style.animation = "none";
         imgPuño1.style.transform = "scaleX(-1)"
         resetPuños();
@@ -175,7 +177,7 @@ function okTijeras() {
         resultado1.textContent = "Perdiste 😭";
         puntosPerder++;
         puntosMaquina.textContent = "Puntos de la Maquina: " + puntosPerder;
-        imgPuño2.src = "../media/img/tijeras-btn.png";
+        imgPuño2.src = "../media/img/PuñoPapelTijeras/tijeras-btn.png";
         imgPuño2.style.animation = "none";
         imgPuño1.style.animation = "none";
         winMaquina++;
@@ -191,9 +193,9 @@ function okTijeras() {
         puntosGanar++;
 
         puntosJugador.textContent = "Puntos del jugador: " + puntosGanar;
-        imgPuño2.src = "../media/img/tijeras-btn.png";
+        imgPuño2.src = "../media/img/PuñoPapelTijeras/tijeras-btn.png";
         imgPuño2.style.animation = "none";
-        imgPuño1.src = "../media/img/papel-btn.png";
+        imgPuño1.src = "../media/img/PuñoPapelTijeras/papel-btn.png";
         imgPuño1.style.animation = "none";
         winJugador++;
         resetPuños();
@@ -208,7 +210,7 @@ function okTijeras() {
 
 
 
-//WIN/lose
+//FUNCIÓN AL GANAR O PERDER
 function intentos() {
 
 
@@ -217,17 +219,16 @@ function intentos() {
         let puños = document.querySelectorAll(".imgPuño1, .imgPuño2");
         let botones = document.querySelectorAll(".img-btn");
 
+        let imgWin = document.querySelectorAll("#win");
+        imgWin.forEach(img => img.classList.remove("d-none"))
+
+
         puños.forEach(puño => puño.classList.add("invisible"));
         botones.forEach(btn => btn.classList.add("invisible"));
 
         resultado1.textContent = ""
 
-        winTextJugador.textContent = "Ganaste 😎";
-        winTextJugador.style.color = "black"
-        winTextJugador.style.backgroundColor = "green"
-        winTextJugador.style.padding = "20px"
-        winTextJugador.style.fontSize = "40px"
-        winTextJugador.style.marginTop = "100px"
+       
 
         let puntos = document.querySelectorAll(".puntosMaquina, .puntosJugador");
         puntos.forEach(p => p.classList.add("invisible"));
@@ -246,18 +247,18 @@ function intentos() {
         let puños = document.querySelectorAll(".imgPuño1, .imgPuño2");
         let botones = document.querySelectorAll(".img-btn");
 
+        let imgLose = document.querySelectorAll("#lose");
+        imgLose.forEach(img => img.classList.remove("d-none"))
+
+
         puños.forEach(puño => puño.classList.add("invisible"));
         botones.forEach(btn => btn.classList.add("invisible"));
 
-        resultado1.textContent = ""
+        // Placeholder: reservado para futuras animaciones o efectos de texto
+        // winTextJugador.textContent = "";
 
+        loseTextJugador.textContent = "";
 
-        loseTextJugador.textContent = "Perdiste 😭";
-        loseTextJugador.style.color = "black"
-        loseTextJugador.style.backgroundColor = "red"
-        loseTextJugador.style.padding = "20px"
-        loseTextJugador.style.marginTop = "100px"
-        loseTextJugador.style.fontSize = "40px"
 
         let puntos = document.querySelectorAll(".puntosMaquina, .puntosJugador");
         puntos.forEach(p => p.classList.add("invisible"));
@@ -279,24 +280,20 @@ function intentos() {
 }
 
 
+
+
 //btn reset
 
 btnReset.addEventListener("click", function () {
     location.reload(); // recarga la página entera y reinicia el juego
 });
 
-
-
-
-
-
-
 //animación entre turnos
 function resetPuños() {
     setTimeout(() => {
         // volver a las imágenes de puño cerrado
-        imgPuño1.src = "../media/img/puño2.png"; // jugador
-        imgPuño2.src = "../media/img/puño.png";  // máquina
+        imgPuño1.src = "../media/img/PuñoPapelTijeras/puño2.png"; // jugador
+        imgPuño2.src = "../media/img/PuñoPapelTijeras/puño.png";  // máquina
 
 
         // reactivar las animaciones

@@ -112,7 +112,7 @@ Son simples, pero para mí son **grandes logros**.
 
 - [x] Subir la colección completa a **GitHub Pages** para jugar online 
 - [x] Mejorar el diseño visual de cada juego  ***En progreso 🚧 (funcional y estable, faltan ajustes visuales menores)**
-- [x] Responsividad total en **dispositivos móviles**  **En progreso 🚧 (funciona correctamente, faltan pequeños ajustes de adaptación)**
+- [x] Responsividad total en: **dispositivos móviles** || **En progreso 🚧 (funciona correctamente, faltan pequeños ajustes de adaptación)**
 - [ ] Añadir más mejoras visuales en general 
 - [ ] Añadir más juegos a la colección  
 - [ ] Hacer un menú inicial con previews de cada miniJuegos
