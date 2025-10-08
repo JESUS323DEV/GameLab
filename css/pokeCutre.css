@@ -91,6 +91,11 @@
     padding: 10px;
 }
 
+.fsPots {
+
+    font-size: 12px;
+}
+
 .gifMaquina {
     background-image: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExanB1dzdoYjV6NHNybTYwamRxM3NuczFoNXRiOTBiZDhrbmh1Y2E3eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lKaeQAunM3hZaqsOpj/giphy.gif);
     background-position: center;
@@ -126,6 +131,24 @@
 }
 
 
+.btnPociones {
+
+    background: linear-gradient(to right, rgb(0, 61, 11), orange);
+    border-radius: 100%;
+    border: none;
+    width:70px;
+    height: 70px;
+    font-size: 20px;
+}
+
+.btnPociones:hover {
+
+    transform: scale(0.9);
+    transition: transform 0.2s ease;
+}
+
+
+
 .fondoAtaques {
 
     background: linear-gradient(to right, black, red);
@@ -138,15 +161,28 @@
 
 
 .imgPociones {
-
-    width: 100px;
+    width: 80px;
     cursor: pointer;
+    transition: transform 0.1s ease;
+    /* duración y suavizado */
 }
+
+.imgPociones.selected {
+    transform: scale(0.8);
+}
+
+
 
 .imgPociones:hover {
 
     transform: scale(0.8);
     transition: 1s;
+}
+
+.imgWin,
+.imgLose {
+
+    width: 400px;
 }
 
 /* =====================
@@ -221,6 +257,14 @@
         font-size: 15px;
     }
 
+    .btnPociones {
+
+        padding: 2px;
+        border-radius: 10px;
+        border: none;
+
+    }
+
 
     .btnDefensa button {
         border: 1px solid;
@@ -230,15 +274,35 @@
 
     }
 
-    .fsTextJugador, .fsTextMaquina {
+    .fsTextJugador,
+    .fsTextMaquina {
 
         font-size: 10px;
     }
 
+    .imgPociones {
+        width: 50px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        /* duración y suavizado */
+    }
 
+    .fsPots {
 
+        font-size: 10px;
+    }
+
+    .barraVidaJugador,
+    .barraVidaMaquina {
+        width: 140px;
+        /* más corta */
+        height: 16px;
+        /* más bajita */
+
+    }
 
 }
+
 
 /* Móviles verticales SM (576px – 767px) */
 @media (min-width: 576px) and (max-width: 767px) {

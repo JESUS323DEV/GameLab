@@ -1,4 +1,7 @@
+//victorias/derrotas
 
+let slimeHp = 1;
+let magoHp = 1;
 
 // --- Jugador ---
 let vidaJugador = document.getElementById("vidaJugador");
@@ -31,26 +34,28 @@ let attackPlanta = document.getElementById("attackPlanta");
 let vidaPots = document.getElementById("vidaPots");
 let criticoPots = document.getElementById("criticoPots");
 
-
-
-
 // --- Botón ---
 let btnAttack = document.getElementById("btnAttack");
 let btnNextTurno = document.getElementById("btnNextTurno");
+//btn de pociones
 let btnPots = document.getElementById("btnPots")
+
+//btn de combate acto 1
+let btnCombate = document.getElementById("btnCombate")
+//btn de combate acto2
+let btnActo2 = document.getElementById("btnActo2");
+
 //Botones next/back
 let btnNext = document.getElementById("btnNext");
 let btnBack = document.getElementById("btnBack");
 let btnBackLogin = document.getElementById("btnBackLogin");
-
-
 
 // --- creamos array ---
 let ataques = ["fuego", "agua", "planta"]
 
 // --- vidas ---
 let vidaJugadorCount = 100;
-let vidaMaquinaCount = 100;
+let vidaMaquinaCount = 120;
 
 // --- texto vida ---
 jugadorVida.textContent = "Vida: " + vidaJugadorCount;
@@ -58,7 +63,7 @@ maquinaVida.textContent = "vida : " + vidaMaquinaCount;
 
 //ataque base  + poción de ataque
 let buffVida = 50;
-let buffCritico = 8;
+let buffCritico = 10;
 
 //daño normal
 let dañoNormal = 5;
@@ -79,24 +84,60 @@ btnNextTurno.disabled = true;
 
 
 let criticBuff = 0;
+let criticBuffMaquina = 0;
+
+//BOTÓN COMBATIR PRIMER ACTO
+btnCombate.addEventListener("click", function () {
+
+
+    document.querySelectorAll(".primerCombate").forEach(combate => {
+        combate.classList.remove("d-none");
+    });
+
+    document.querySelectorAll(".primerHistoria").forEach(history => {
+
+        history.classList.add("d-none")
+    })
+
+
+});
 
 
 
 
+
+//======función mostrar btn ataque solo primer turno
+function btnAtaqueBlock() {
+
+    document.querySelectorAll(".mostrarOcultar").forEach(ocultar => {
+        ocultar.classList.remove("d-none");
+    });
+
+
+}
+
+
+
+
+
+
+//VARIABLES DE DE POCIONES
 let buffMago = null;
-const buff = document.querySelectorAll('[data-potion]');
-buff.forEach(pocion => {
+const pociones = document.querySelectorAll('[data-potion]');
 
+pociones.forEach(pocion => {
     pocion.addEventListener('click', () => {
         buffMago = pocion.dataset.potion;
 
-    })
-})
+        pociones.forEach(p => p.classList.remove('selected'));
+        pocion.classList.add('selected');
+    });
+});
 
 
 
 
-
+//FUNCIÓN DE POCIONES
 btnPots.addEventListener("click", function () {
 
     if (buffMago === "vida") {
@@ -105,53 +146,22 @@ btnPots.addEventListener("click", function () {
         console.log("Vida actual " + vidaJugadorCount)
 
         jugadorVida.textContent = "Vida Actual: " + vidaJugadorCount;
+        btnAtaqueBlock()
 
     } else if (buffMago === "critico") {
-        
-        
         criticBuff = 8;
+        console.log("Critico " + criticBuff)
+        btnAtaqueBlock()
 
+    } else if (buffMago === null) {
 
-        console.log("Critico" + criticBuff)
-
-
-
-
-
-
+        alert("POCIONES")
 
     }
 
 
 
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
 
 // ---FUNCIÓN ATAQUE JUGADOR ---
 btnAttack.addEventListener("click", function () {
@@ -162,9 +172,9 @@ btnAttack.addEventListener("click", function () {
     // radio seleccionado
     let radioSelect = document.querySelector("input[name='ataqueName']:checked");
 
+    //=================TURNO DEL JUGADOR=================================
     if (radioSelect) {
 
-        //=================TURNO DEL JUGADOR=================================
         if (radioSelect && turnoJugador === "jugador") {
 
             console.log("🧙‍♂️ El Mago se prepara para atacar...");
@@ -175,7 +185,7 @@ btnAttack.addEventListener("click", function () {
                 let ataqueSelect = radioSelect.value;
                 //EMPATE - DAÑO NORMAL
                 if (ataqueSelect === defensaSlim) {
-                    let critico = probCritico();
+                    let critico = probCritico() + criticBuff;
                     let dañoTotal = dañoNormal + critico;
 
 
@@ -212,7 +222,12 @@ btnAttack.addEventListener("click", function () {
                     console.log("🤖🛡️  Maquina eligió escudo de " + defensaSlim)
 
                     console.log("🧙‍♂️ DAÑO NORMAL: " + dañoNormal);
+
                     console.log("✨ Crítico: " + critico);
+                    if (buffMago === "critico") {
+                        console.log("✨ Crítico normal: " + (critico - buffCritico) + " + Poción: " + buffCritico + " = Total crítico: " + critico);
+                    }
+
                     console.log("⚔️ DAÑO TOTAL = " + dañoNormal + " + " + critico + " = " + dañoTotal);
                     console.log("🧙‍♂️ Vida jugador → " + vidaJugadorCount + " (se mantiene)");
                     console.log("👾 Vida máquina → " + vidaMaquinaCount);
@@ -224,7 +239,7 @@ btnAttack.addEventListener("click", function () {
                     (ataqueSelect === "fuego" && defensaSlim === "planta") ||
                     (ataqueSelect === "planta" && defensaSlim === "agua")) {
 
-                    let critico = probCritico();
+                    let critico = probCritico() + criticBuff;
                     let dañoTotal = dañoSuperJugador + critico;
 
 
@@ -257,20 +272,29 @@ btnAttack.addEventListener("click", function () {
                     // Cambiar color según la vida
                     vida0()
 
+
+
                     console.log("🧙‍♂️ MAGO ELIGIÓ ATAQUE DE " + ataqueSelect)
                     console.log("🤖🛡️  Maquina eligió escudo de " + defensaSlim)
 
                     console.log("🧙‍♂️ DAÑO SUPER-EFECTIVO: " + dañoSuperJugador);
+
                     console.log("✨ Crítico: " + critico);
+                    if (buffMago === "critico") {
+
+            
+                        console.log("✨ Crítico normal: " + (critico - buffCritico) + " + Poción: " + buffCritico + " = Total crítico: " + critico);
+                    }
+
                     console.log("⚔️ Fórmula → " + dañoSuperJugador + " + " + critico + " = " + dañoTotal);
 
                     console.log("🧙‍♂️ Vida máquina → " + vidaMaquinaCount);
                     console.log("👾 Vida jugador → " + vidaJugadorCount + " (se mantiene)");
-                    console.log("==================================================================")
+                    console.log("==================================================================");
 
-                    //GANA LA MAQUINA DAÑO BAJO
+
                 } else {
-                    let critico = probCritico();
+                    let critico = probCritico() + criticBuff;
                     let dañoTotal = dañoNoEfectivoJugador + critico;
 
                     //RESTA PH DEL DAÑO TOTAL A LA MAQUINA
@@ -311,6 +335,9 @@ btnAttack.addEventListener("click", function () {
 
                     console.log("🧙‍♂️ DAÑO BAJO: " + dañoNoEfectivoJugador);
                     console.log("✨ Crítico: " + critico);
+                    if (buffMago === "critico") {
+                        console.log("✨ Crítico normal: " + (critico - buffCritico) + " + Poción: " + buffCritico + " = Total crítico: " + critico);
+                    }
                     console.log("⚔️ Fórmula → " + dañoNoEfectivoJugador + " + " + critico + " = " + dañoTotal);
 
                     console.log("🧙‍♂️ Vida máquina → " + vidaMaquinaCount);
@@ -320,12 +347,17 @@ btnAttack.addEventListener("click", function () {
 
                 }
 
+
+
+
+
                 turnoJugador = "maquina"
                 btnAttack.disabled = true;
                 btnNextTurno.disabled = false;
                 radioSelect.checked = false;
                 mostrarEscudos()
                 ocultarDañosMaquina()
+                ganaMago()
 
             }, 1000);
 
@@ -336,7 +368,6 @@ btnAttack.addEventListener("click", function () {
     }
 });
 //==================================
-
 
 
 //====================================TURNO DE LA MAQUINA ==========================
@@ -369,7 +400,7 @@ function ataqueMaquina() {
         //DAÑÓ NORMAL DEL SLIM
         if (ataqueSlim === defensaMago) {
 
-            let critico = probCritico();
+            let critico = probCritico() + criticBuffMaquina;
             let dañoTotal = dañoNormal + critico;
 
 
@@ -419,7 +450,7 @@ function ataqueMaquina() {
             (ataqueSlim === "fuego" && defensaMago === "planta") ||
             (ataqueSlim === "planta" && defensaMago === "agua")) {
 
-            let critico = probCritico();
+            let critico = probCritico() + criticBuffMaquina;
             let dañoTotal = dañoSuperMaquina + critico;
 
             //RESTA PH DEL DAÑO TOTAL AL JUGADOR
@@ -466,7 +497,7 @@ function ataqueMaquina() {
 
         } else {
 
-            let critico = probCritico();
+            let critico = probCritico() + criticBuffMaquina;
             let dañoTotal = dañoNoEfectivoMaquina + critico;
 
             //RESTA PH DEL DAÑO TOTAL A LA MAQUINA
@@ -534,6 +565,38 @@ function ataqueMaquina() {
 
 
 //===================================FUNCIONES==============================================
+
+function ganaMago() {
+
+    setTimeout(() => {
+        if (vidaMaquinaCount <= 0) {
+
+
+            document.querySelectorAll(".primerCombate").forEach(combate => {
+                combate.classList.add("d-none");
+            });
+
+            document.querySelectorAll(".acto2").forEach(combate2 => {
+                combate2.classList.remove("d-none")
+
+            })
+
+
+        } else if (vidaJugadorCount <= 0) {
+
+            document.querySelectorAll(".imgLose").forEach(lose => {
+                lose.classList.remove("d-none")
+
+            })
+
+
+        }
+    }, 2000);
+}
+
+
+
+
 //====BOTONES====
 //BTN TERMINAR TURNO/DEFENDERSE
 btnNextTurno.addEventListener("click", () => {
@@ -640,8 +703,8 @@ function vida0() {
     }
 }
 
-// ===================== ESCUDOS Y ATAQUES ===================== 
 
+// ===================== ESCUDOS Y ATAQUES ===================== 
 //FUNCIONES MOSTRAR ESCUDOS OCULTAR ATAQUES
 // Mostrar escudos / ocultar ataques
 function mostrarEscudos() {
@@ -730,7 +793,7 @@ function ocultarDañosJugador() {
 //PROBABILIDAD DE CRITICO
 function probCritico() {
 
-    let dañoCritico = Math.floor(Math.random() * (10 - 5 + 1)) + 5 + criticBuff;
+    let dañoCritico = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
     return dañoCritico;
 
 }

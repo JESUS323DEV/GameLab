@@ -30,7 +30,7 @@
 
         </div>
     </header>
-
+    <!--! texto descriptivo-->
     <div class="container shadow mb-5">
         <div class="fs-3 p-3">
             <h3 class="text-center py-3 fs-2">PokéCutre (Mago vs Slime) 🧙‍♂️👾</h3>
@@ -112,15 +112,72 @@
 
 
 
+    <!--! historia acto 1 visible solo hasta darle al botón de combate 1 -->
+    <div class="container border primerHistoria ">
+
+        <div class="text-center">
+            <h2 class="border bg-secondary p-3">⚔️ PokéCutre: El Reino Bugueado</h2>
+            <h4 class="my-5">Capítulo I – El Eco del Console.log Infinito</h4>
+            <p class="text-start">En las profundidades del código, donde las funciones olvidadas duermen y las variables
+                sin declarar vagan
+                eternamente,
+                un eco maldito resonó entre las líneas:
+                “console.log… console.log… console.log…”
+                De ese bucle infernal nació Slim, criatura viscosa hecha de errores y desesperación, capaz de colapsar
+                todo el proyecto.
+                Pero aún queda esperanza.
+                Yisus, el último mago del Reino Bugueado, se alza con su varita-teclado y sus pociones de stack overflow
+                para restaurar el orden.
+                El destino del código depende de ti, hechicero del DOM.
+                Prepara tus buffs... y entra en combate.</p>
+        </div>
+        <div class="text-center">
+            <button class="" id="btnCombate">Combatir</button>
+        </div>
 
 
+    </div>
+    <!--! historia acto 2 visible solo hasta darle al botón de combate 2-->
+    <div class="container text-center d-none acto2 border">
+        <div>
+            <h2 class="border bg-secondary p-3">⚡ PokéCutre: El Reino Bugueado</h2>
+            <h4 class="my-5">Capítulo II – El TypeError Prohibido</h4>
+
+            <p>Tras la caída de Slim, el mago Yisus creyó haber restaurado la estabilidad del código.
+                Pero el IDE aún susurra…
+
+                “undefined… undefined… undefined…”
+
+                De los rincones del stack surgió Nullius, el TypeError Prohibido, maestro del caos sintáctico y
+                destructor de variables.
+                Su toque puede convertir cualquier línea en un null eterno.
+
+                Yisus, armado con nuevas pociones y la fe en su git commit, se adentra en el Campo de Compilación, donde
+                la realidad se recompila a cada paso.
+
+                El combate no ha terminado... solo se ha refactorizado.
+            </p>
+
+
+            <div>
+                <button class="d-none acto2" id="btnActo2">Continuar Acto 2</button>
+            </div>
+
+            <div>
+                <img class="imgWin" src="../media/img/pokeCutre/victoria.png" alt="">
+                <img class="imgLose d-none" src="../media/img/pokeCutre/perdiste.png" alt="">
+            </div>
+
+
+        </div>
+    </div>
 
 
     <!--! BLOQUE DE MAGO Y SLIME Y ATAQUES-->
-    <div class="row d-flex  fondoJuego text-white">
+    <div class="row d-flex  fondoJuego text-white d-none primerCombate">
 
+        <!--!SECCIÓN JUGADOR-->
         <div id="vidaJugador" class="flex-column col-6 col-lg-4 mx-auto">
-            <!--!SECCIÓN JUGADOR-->
             <section id="jugadorVida" class="gifJugador">
                 <!-- todo: IMG - VIDA JUGADOR1-->
                 <div class="text-center">
@@ -129,9 +186,9 @@
                         <div class="barraRellenoJugador"></div>
                     </div>
                 </div>
-                <div class="">
-                    <!-- todo: IMG - JUGADOR1-->
-                    <img class=" imgPlayer  " src="../media/img/pokeCutre/magoPlayer.png" alt="">
+                <!-- todo: IMG - JUGADOR1-->
+                <div class="text-center">
+                    <img class=" imgPlayer " src="../media/img/pokeCutre/magoPlayer.png" alt="">
                 </div>
                 <!--! log jugadas-->
                 <div>
@@ -143,17 +200,35 @@
                     <p class="superEfec badge bg-danger d-none">SuperEfec</p>
                     <p class="noEsEfec badge bg-info d-none">NoEsEfec</p>
                 </div>
-
             </section>
 
 
-            <div>
-                <button type="button" id="btnPots" class="">Elegir poción</button>
-            </div>
 
-            <div>
-                <img class="imgPociones" data-potion="vida" src="../media/img/pokeCutre/pocionVida.png" alt="">
-                <img class="imgPociones" data-potion="critico" src="../media/img/pokeCutre/pocionCritico.png" alt="">
+
+            <!--! pociones-->
+            <div class="row ">
+                <div class="col-12 d-flex flex-row align-content-center justify-content-center">
+
+                    <!--todo: poción critico-->
+                    <div class="d-flex flex-column">
+                        <img class="imgPociones mx-auto" data-potion="critico"
+                            src="../media/img/pokeCutre/pocionCritico.png" alt="">
+                        <p class="fsPots text-center">Aumenta el critico en 8</p>
+                    </div>
+
+                    <!--todo: poción vida-->
+                    <div class="d-flex flex-column mx-1 mx-lg-4">
+                        <img class="imgPociones mx-auto" data-potion="vida"
+                            src="../media/img/pokeCutre/pocionVida.png" alt="">
+                        <p class="fsPots ">Aumenta la vida en 50</p>
+                    </div>
+
+
+                    <!--todo: botón pociones-->
+                    <div class=" mx-0 mx-lg4 my-auto">
+                        <button type="button" id="btnPots" class="btnPociones">Usar</button>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -213,7 +288,7 @@
             <!--! BOTÓN DE ATAQUE-->
             <div class="justify-content-center align-content-center p-2">
                 <div class="text-center btnAtacar my-0 my-lg-3 align-content-center justify-content-center">
-                    <button id="btnAttack" class="">ATACAR <br>⚔️</button> <br>
+                    <button id="btnAttack" class="d-none mostrarOcultar">ATACAR <br>⚔️</button> <br>
                 </div>
 
                 <div class="btnDefensa my-0 my-lg-3 align-content-center justify-content-center">
